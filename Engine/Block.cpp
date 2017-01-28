@@ -32,3 +32,23 @@ void Block::DrawBlock(Graphics & gfx)
 {
 	gfx.DrawRectDim(boxX, boxY, width, height, blockColor);
 }
+
+const int Block::GetBlockX() const
+{
+	return boxX;
+}
+
+const int Block::GetBlockY() const
+{
+	return boxY;
+}
+
+const int Block::GetBlockWidth() const
+{
+	return width;
+}
+
+const int Block::GetBlockHeight() const
+{
+	return height;
+}
