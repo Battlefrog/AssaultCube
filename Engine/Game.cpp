@@ -27,7 +27,7 @@ Game::Game( MainWindow& wnd )
 	gfx( wnd )
 {
 	blocks[0].InitBlock(300, 300, 35, 20);
-	blocks[1].InitBlock(222, 555, 50, 50);
+	blocks[1].InitBlock(300, 300, 50, 50);
 }
 
 void Game::Go()
@@ -58,7 +58,7 @@ void Game::UpdateModel()
 void Game::ComposeFrame()
 {
 	player.DrawPlayer(gfx);
-	for (int i = 0; i <= amountOfBlocks; ++i)
+	for (int i = 0; i < amountOfBlocks; ++i)
 	{
 		blocks[i].DrawBlock(gfx);
 	}
