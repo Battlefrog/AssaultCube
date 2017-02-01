@@ -58,7 +58,7 @@ void Game::UpdateModel()
 void Game::ComposeFrame()
 {
 	player.DrawPlayer(gfx);
-	for (int i = 0; i > amountOfBlocks; ++i)
+	for (int i = 0; i > amountOfBlocks; i++)
 	{
 		blocks[i].DrawBlock(gfx);
 	}
