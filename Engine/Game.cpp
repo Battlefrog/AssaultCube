@@ -27,6 +27,14 @@ Game::Game( MainWindow& wnd )
 	gfx( wnd )
 {
 
+	/* CONSTANTS OF THE BLOCKS */
+	/* THEY ARE NORMALLY 15 x 15 */
+	/* AND ALSO DON'T FORGET TO UPDATE */
+	/* AMOUNT OF BLOCKS IF theGame GETS CORRUPTED */
+
+
+	/* LEVEL 1 */
+
 	// Level Border
 	blocks[0].InitBlock(20, 30, 750, 15);
 	blocks[1].InitBlock(20, 30, 15, 550);
@@ -37,8 +45,15 @@ Game::Game( MainWindow& wnd )
 	blocks[4].InitBlock(135, 30, 15, 300);
 	blocks[5].InitBlock(20, 375, 200, 15);
 	blocks[6].InitBlock(20, 150, 75, 15);
-	blocks[7].InitBlock(300, 300, 50, 50);
+	blocks[7].InitBlock(205, 300, 15, 150);
 	blocks[8].InitBlock(300, 300, 50, 50);
+
+	// 2nd Challenge
+	blocks[8].InitBlock(300, 300, 50, 50);
+	blocks[9].InitBlock(300, 300, 50, 50);
+	blocks[10].InitBlock(300, 300, 50, 50);
+	blocks[11].InitBlock(300, 300, 50, 50);
+	blocks[12].InitBlock(300, 300, 50, 50);
 }
 
 void Game::Go()
