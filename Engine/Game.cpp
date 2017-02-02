@@ -26,8 +26,19 @@ Game::Game( MainWindow& wnd )
 	wnd( wnd ),
 	gfx( wnd )
 {
-	blocks[0].InitBlock(300, 300, 35, 20);
-	blocks[1].InitBlock(300, 300, 50, 50);
+
+	// 
+	blocks[0].InitBlock(20, 30, 750, 15);
+	blocks[1].InitBlock(20, 30, 15, 550);
+	blocks[2].InitBlock(20, 565, 750, 15);
+	blocks[3].InitBlock(770, 30, 15, 550);
+
+
+	blocks[4].InitBlock(135, 30, 15, 300);
+	blocks[5].InitBlock(20, 375, 200, 15);
+	blocks[6].InitBlock(20, 150, 75, 15);
+	blocks[7].InitBlock(300, 300, 50, 50);
+	blocks[8].InitBlock(300, 300, 50, 50);
 }
 
 void Game::Go()
