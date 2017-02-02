@@ -48,7 +48,7 @@ private:
 	bool playerIsNotKilled = false;
 	bool isGameOver = false;
 
-	static constexpr int amountOfBlocks = 2;
+	static constexpr int amountOfBlocks = 9;
 
 	Player player;
 

@@ -17,15 +17,19 @@ public:
 	void UpdateInput(const Keyboard& kbd);
 	void DrawPlayer(Graphics& gfx) const;
 	void IsOutsideBoundries();
+	void ResetPlayer();
 
-	int playerSpeed = 2;
+	int playerSpeed = 1;
 
 private:
 
 	int x;
 	int y;
 
-	static constexpr int  width = 15;
+	int startingX = 50;
+	int startingY = 75;
+
+	static constexpr int width = 15;
 	static constexpr int height = 15;
 
 	Color playerColor = Colors::Green;

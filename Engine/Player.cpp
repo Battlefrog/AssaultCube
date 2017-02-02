@@ -24,10 +24,17 @@ void Player::IsOutsideBoundries()
 	}
 }
 
+void Player::ResetPlayer()
+{
+	// TODO: This will not work for long... better maintain it
+	x = startingX;
+	y = startingY;
+}
+
 Player::Player()
 {
-	x = 20;
-	y = 20;
+	x = startingX;
+	y = startingY;
 }
 
 int Player::GetX() const
