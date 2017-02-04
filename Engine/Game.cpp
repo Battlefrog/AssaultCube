@@ -32,7 +32,6 @@ Game::Game( MainWindow& wnd )
 	/* AND ALSO DON'T FORGET TO UPDATE */
 	/* AMOUNT OF BLOCKS IF theGame GETS CORRUPTED */
 
-
 	/* LEVEL 1 */
 
 	// Level Border
@@ -45,7 +44,7 @@ Game::Game( MainWindow& wnd )
 	blocks[4].InitBlock(135, 30, 15, 300);
 	blocks[5].InitBlock(20, 375, 200, 15);
 	blocks[6].InitBlock(20, 150, 75, 15);
-	blocks[7].InitBlock(205, 300, 15, 150);
+	blocks[7].InitBlock(205, 390, 15, -250);
 	blocks[8].InitBlock(300, 300, 50, 50);
 
 	// 2nd Challenge
@@ -83,6 +82,11 @@ void Game::UpdateModel()
 	if (wnd.kbd.KeyIsPressed('R'))
 	{
 		player.ResetPlayer();
+	}
+
+	if (wnd.kbd.KeyIsPressed(VK_ESCAPE))
+	{
+		wnd.Kill();
 	}
 }
 
