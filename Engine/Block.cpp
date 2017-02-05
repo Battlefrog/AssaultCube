@@ -1,6 +1,6 @@
 #include "Block.h"
 
-bool Block::IsNotCollidingWithPlayer(Player & player) const
+bool Block::IsCollidingWithPlayer(Player & player) const
 {
 	const int playerRight = player.GetX() + player.GetWidth();
 	const int playerBottom = player.GetY() + player.GetHeight();
@@ -12,11 +12,11 @@ bool Block::IsNotCollidingWithPlayer(Player & player) const
 		playerBottom >= boxY &&
 		player.GetY() <= blockBottom == true)
 	{
-		return false;
+		return true;
 	}
 	else
 	{
-		return true;
+		return false;
 	}
 }
 

@@ -45,14 +45,14 @@ Game::Game( MainWindow& wnd )
 	blocks[5].InitBlock(20, 375, 200, 15);
 	blocks[6].InitBlock(20, 150, 75, 15);
 	blocks[7].InitBlock(205, 390, 15, -250);
-	blocks[8].InitBlock(300, 300, 50, 50);
+	blocks[8].InitBlock(300, 30, 90, 200);
 
 	// 2nd Challenge
-	blocks[8].InitBlock(300, 300, 50, 50);
-	blocks[9].InitBlock(300, 300, 50, 50);
+	blocks[9].InitBlock(300, 300, 470, 15);
 	blocks[10].InitBlock(300, 300, 50, 50);
 	blocks[11].InitBlock(300, 300, 50, 50);
 	blocks[12].InitBlock(300, 300, 50, 50);
+	blocks[13].InitBlock(300, 300, 50, 50);
 }
 
 void Game::Go()
@@ -67,15 +67,16 @@ void Game::UpdateModel()
 {
 	for (int i = 0; i <= amountOfBlocks; ++i)
 	{
-		if (blocks[i].IsNotCollidingWithPlayer(player))
+		// Not working properly
+		if (!blocks[i].IsCollidingWithPlayer(player))
 		{
 			player.UpdateInput(wnd.kbd);
 			player.IsOutsideBoundries();
 		}
 		else
 		{
-			isGameOver = true;
-			// TODO: Do something when the game is over
+			player.ResetPlayer();
+			numberOfTimesReset++;
 		}
 	}	
 

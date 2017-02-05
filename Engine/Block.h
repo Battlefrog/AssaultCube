@@ -6,7 +6,7 @@ class Block
 {
 public:
 
-	bool IsNotCollidingWithPlayer(Player& player) const;
+	bool IsCollidingWithPlayer(Player& player) const;
 
 	void InitBlock(int in_x, int in_y, int in_width, int in_height);
 	void DrawBlock(Graphics& gfx);

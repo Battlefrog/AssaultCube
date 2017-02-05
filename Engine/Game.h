@@ -45,10 +45,9 @@ private:
 	/********************************/
 	/*  User Variables              */
 
-	bool playerIsNotKilled = false;
-	bool isGameOver = false;
+	int numberOfTimesReset = 0;
 
-	static constexpr int amountOfBlocks = 13;
+	static constexpr int amountOfBlocks = 14;
 
 	Player player;
 
