@@ -25,6 +25,9 @@ Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
 	gfx( wnd )
+	//crashIntoWall(L"intoWall.wav"),
+	//getPoint(L"pointPickup.wav"),
+	//winLevel(L"completeLevel.wav")
 {
 
 	/* CONSTANTS OF THE BLOCKS */
@@ -48,7 +51,7 @@ Game::Game( MainWindow& wnd )
 	blocks[8].InitBlock(300, 30, 90, 200);
 
 	// 2nd Challenge
-	blocks[9].InitBlock(300, 300, 470, 15);
+	blocks[9].InitBlock(300, 500, 15, -45);
 	blocks[10].InitBlock(300, 300, 50, 50);
 	blocks[11].InitBlock(300, 300, 50, 50);
 	blocks[12].InitBlock(300, 300, 50, 50);
@@ -77,6 +80,7 @@ void Game::UpdateModel()
 		{
 			player.ResetPlayer();
 			numberOfTimesReset++;
+			//crashIntoWall.Play();
 		}
 	}	
 

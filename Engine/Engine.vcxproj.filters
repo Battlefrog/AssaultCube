@@ -16,6 +16,12 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{8b6c92a8-f65d-451e-80e3-d65773602b92}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Media">
+      <UniqueIdentifier>{0cac18a7-286b-4d1f-b783-485b754e6775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Sounds">
+      <UniqueIdentifier>{50529b2e-cff2-499f-8109-2911cc378e8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChiliWin.h">
@@ -110,5 +116,16 @@
     <Image Include="Chili.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="completeLevel.wav">
+      <Filter>Media\Sounds</Filter>
+    </Media>
+    <Media Include="intoWall.wav">
+      <Filter>Media\Sounds</Filter>
+    </Media>
+    <Media Include="pointPickup.wav">
+      <Filter>Media\Sounds</Filter>
+    </Media>
   </ItemGroup>
 </Project>

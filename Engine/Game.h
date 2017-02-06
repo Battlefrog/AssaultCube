@@ -25,6 +25,7 @@
 #include "Graphics.h"
 #include "Player.h"
 #include "Block.h"
+#include "Sound.h"
 
 class Game
 {
@@ -52,6 +53,10 @@ private:
 	Player player;
 
 	Block blocks[amountOfBlocks];
+
+	Sound crashIntoWall;
+	Sound getPoint;
+	Sound winLevel;
 	
 	/********************************/
 };

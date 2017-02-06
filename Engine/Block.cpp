@@ -1,5 +1,7 @@
 #include "Block.h"
 
+//TODO: Function does not report collisions to blocks
+//with negative width and heights
 bool Block::IsCollidingWithPlayer(Player & player) const
 {
 	const int playerRight = player.GetX() + player.GetWidth();
