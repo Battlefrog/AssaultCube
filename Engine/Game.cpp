@@ -70,7 +70,6 @@ void Game::UpdateModel()
 {
 	for (int i = 0; i <= amountOfBlocks; ++i)
 	{
-		// Not working properly
 		if (!blocks[i].IsCollidingWithPlayer(player))
 		{
 			player.UpdateInput(wnd.kbd);

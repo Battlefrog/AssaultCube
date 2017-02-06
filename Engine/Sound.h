@@ -124,6 +124,8 @@ private:
 	static constexpr DWORD nSamplesPerSec = 44100u;
 	static constexpr WORD nBitsPerSample = 16u;
 	// change this value to increase/decrease the maximum polyphony	
+	//TODO: Sound loader points to this being the issue with the sounds
+	//take a look into it
 	static constexpr size_t nChannels = 16u;
 };
 
