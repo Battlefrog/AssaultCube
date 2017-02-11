@@ -37,12 +37,12 @@ Player::Player()
 	y = startingY;
 }
 
-int Player::GetX() const
+const int Player::GetX() const
 {
 	return x;
 }
 
-int Player::GetY() const
+const int Player::GetY() const
 {
 	return y;
 }

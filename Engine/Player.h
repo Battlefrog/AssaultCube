@@ -5,12 +5,13 @@
 
 class Player
 {
+
 public:
 
 	Player();
 
-	int GetX() const;
-	int GetY() const;
+	const int GetX() const;
+	const int GetY() const;
 	int GetWidth() const;
 	int GetHeight() const;
 
@@ -33,5 +34,4 @@ private:
 	static constexpr int height = 15;
 
 	Color playerColor = Colors::Green;
-
 };
