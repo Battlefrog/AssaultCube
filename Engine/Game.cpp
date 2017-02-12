@@ -83,17 +83,9 @@ void Game::UpdateModel()
 			player.SetTimesReset(player.numberOfTimesReset++);
 			//crashIntoWall.Play();
 		}
-	}	
-
-	if (wnd.kbd.KeyIsPressed('R'))
-	{
-		player.ResetPlayer();
 	}
 
-	if (wnd.kbd.KeyIsPressed(VK_ESCAPE))
-	{
-		wnd.Kill();
-	}
+	gameManager.HandleCommonInputs(wnd.kbd, player, wnd);
 }
 
 void Game::ComposeFrame()

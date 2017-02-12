@@ -27,6 +27,7 @@
 #include "Block.h"
 #include "Sound.h"
 #include "Goal.h"
+#include "GameManager.h"
 
 class Game
 {
@@ -58,6 +59,8 @@ private:
 	Sound crashIntoWall;
 	Sound getPoint;
 	Sound winLevel;
+
+	GameManager gameManager;
 	
 	/********************************/
 };

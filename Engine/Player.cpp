@@ -62,7 +62,7 @@ int Player::SetTimesReset(int newValue)
 	return newValue;
 }
 
-void Player::UpdateInput(const Keyboard & kbd)
+void Player::UpdateInput(const Keyboard& kbd)
 {
 	if (kbd.KeyIsPressed(VK_RIGHT))
 	{
