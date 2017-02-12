@@ -37,6 +37,8 @@ Game::Game( MainWindow& wnd )
 
 	/* LEVEL 1 */
 
+	goal.InitGoal(650, 300);
+
 	// Level Border
 	blocks[0].InitBlock(20, 30, 750, 15);
 	blocks[1].InitBlock(20, 30, 15, 550);
@@ -78,7 +80,7 @@ void Game::UpdateModel()
 		else
 		{
 			player.ResetPlayer();
-			numberOfTimesReset++;
+			player.SetTimesReset(player.numberOfTimesReset++);
 			//crashIntoWall.Play();
 		}
 	}	
@@ -101,4 +103,5 @@ void Game::ComposeFrame()
 	{
 		blocks[i].DrawBlock(gfx);
 	}
+	goal.DrawGoal(gfx);
 }

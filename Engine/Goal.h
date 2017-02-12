@@ -21,8 +21,8 @@ private:
 	int x;
 	int y;
 
-	static constexpr int width = 30;
-	static constexpr int height = 30;
+	static constexpr int width = 15;
+	static constexpr int height = 15;
 
 	Color goalColor = Colors::Yellow;
 };

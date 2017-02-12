@@ -26,6 +26,7 @@
 #include "Player.h"
 #include "Block.h"
 #include "Sound.h"
+#include "Goal.h"
 
 class Game
 {
@@ -46,11 +47,11 @@ private:
 	/********************************/
 	/*  User Variables              */
 
-	int numberOfTimesReset = 0;
-
 	static constexpr int amountOfBlocks = 14;
 
 	Player player;
+
+	Goal goal;
 
 	Block blocks[amountOfBlocks];
 
