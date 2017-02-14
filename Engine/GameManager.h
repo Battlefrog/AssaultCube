@@ -4,6 +4,7 @@
 #include "MainWindow.h"
 #include "Player.h"
 #include "Sound.h"
+#include "Point.h"
 
 class GameManager
 {
@@ -14,7 +15,5 @@ public:
 	void PlaySound();
 
 private:
-
-
 
 };

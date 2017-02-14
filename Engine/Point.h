@@ -1,13 +1,30 @@
 #pragma once
 
 #include "Graphics.h"
+#include "Player.h"
 
 class Point
 {
 
 public:
 
+	const int GetX() const;
+	const int GetY() const;
+
+	bool IsPlayerColliding(Player player);
+
+	void DrawPoint(Graphics& gfx);
+	void InitPoint(int in_x, int in_y);
+
+	bool isCollected = false;
+
 private:
+
+	int x;
+	int y;
+
+	static constexpr int width = 15;
+	static constexpr int height = 45;
 
 	Color pointColor = Colors::Blue;
 };

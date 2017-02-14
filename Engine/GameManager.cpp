@@ -1,6 +1,5 @@
 #include "GameManager.h"
 
-
 void GameManager::HandleCommonInputs(const Keyboard& kbd, Player& player, MainWindow& wnd)
 {
 	if (kbd.KeyIsPressed('R'))
