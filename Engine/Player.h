@@ -12,8 +12,10 @@ public:
 
 	const int GetX() const;
 	const int GetY() const;
+
 	int GetWidth() const;
 	int GetHeight() const;
+	int SetTimesReset(int newValue);
 
 	void UpdateInput(const Keyboard& kbd);
 	void DrawPlayer(Graphics& gfx) const;
@@ -21,6 +23,7 @@ public:
 	void ResetPlayer();
 
 	int playerSpeed = 1;
+	int numberOfTimesReset = 0;
 
 private:
 

@@ -57,7 +57,12 @@ int Player::GetHeight() const
 	return height;
 }
 
-void Player::UpdateInput(const Keyboard & kbd)
+int Player::SetTimesReset(int newValue)
+{
+	return newValue;
+}
+
+void Player::UpdateInput(const Keyboard& kbd)
 {
 	if (kbd.KeyIsPressed(VK_RIGHT))
 	{

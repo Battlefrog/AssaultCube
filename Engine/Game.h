@@ -26,6 +26,9 @@
 #include "Player.h"
 #include "Block.h"
 #include "Sound.h"
+#include "Goal.h"
+#include "GameManager.h"
+#include "Point.h"
 
 class Game
 {
@@ -46,17 +49,21 @@ private:
 	/********************************/
 	/*  User Variables              */
 
-	int numberOfTimesReset = 0;
-
 	static constexpr int amountOfBlocks = 14;
+	static constexpr int amountOfPoints = 2;
 
 	Player player;
 
+	Goal goal;
+
 	Block blocks[amountOfBlocks];
+	Point points[amountOfPoints];
 
 	Sound crashIntoWall;
 	Sound getPoint;
 	Sound winLevel;
+
+	GameManager gameManager;
 	
 	/********************************/
 };

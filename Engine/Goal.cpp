@@ -32,7 +32,7 @@ bool Goal::IsPlayerColliding(Player player)
 
 void Goal::DrawGoal(Graphics & gfx) const
 {
-	gfx.DrawRectDim(x, y, width, height);
+	gfx.DrawRectDim(x, y, width, height, goalColor);
 }
 
 void Goal::InitGoal(int in_x, int in_y)

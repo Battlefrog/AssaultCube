@@ -37,6 +37,11 @@ Game::Game( MainWindow& wnd )
 
 	/* LEVEL 1 */
 
+	/* Goals */
+	goal.InitGoal(650, 300);
+
+	/* Blocks */
+
 	// Level Border
 	blocks[0].InitBlock(20, 30, 750, 15);
 	blocks[1].InitBlock(20, 30, 15, 550);
@@ -44,18 +49,23 @@ Game::Game( MainWindow& wnd )
 	blocks[3].InitBlock(770, 30, 15, 550);
 
 	// 1st Challenge
-	blocks[4].InitBlock(135, 30, 15, 300);
+	blocks[4].InitBlock(155, 30, 15, 300);
 	blocks[5].InitBlock(20, 375, 200, 15);
 	blocks[6].InitBlock(20, 150, 75, 15);
-	blocks[7].InitBlock(205, 390, 15, -250);
-	blocks[8].InitBlock(300, 30, 90, 200);
+	blocks[7].InitBlock(260, 240, 15, 45);
+	blocks[8].InitBlock(275, 30, 110, 210);
 
 	// 2nd Challenge
-	blocks[9].InitBlock(300, 500, 15, -45);
-	blocks[10].InitBlock(300, 300, 50, 50);
-	blocks[11].InitBlock(300, 300, 50, 50);
-	blocks[12].InitBlock(300, 300, 50, 50);
+	blocks[9].InitBlock(300, 300, 15, 45);
+	blocks[10].InitBlock(100, 380, 15, 75);
+	blocks[11].InitBlock(100, 510, 15, 60);
+	blocks[12].InitBlock(275, 285, 100, 15);
 	blocks[13].InitBlock(300, 300, 50, 50);
+
+	/* Points */
+
+	points[0].InitPoint(350, 200);
+	points[1].InitPoint(40, 460);
 }
 
 void Game::Go()
@@ -78,20 +88,12 @@ void Game::UpdateModel()
 		else
 		{
 			player.ResetPlayer();
-			numberOfTimesReset++;
+			player.SetTimesReset(player.numberOfTimesReset++);
 			//crashIntoWall.Play();
 		}
-	}	
-
-	if (wnd.kbd.KeyIsPressed('R'))
-	{
-		player.ResetPlayer();
 	}
 
-	if (wnd.kbd.KeyIsPressed(VK_ESCAPE))
-	{
-		wnd.Kill();
-	}
+	gameManager.HandleCommonInputs(wnd.kbd, player, wnd);
 }
 
 void Game::ComposeFrame()
@@ -101,4 +103,11 @@ void Game::ComposeFrame()
 	{
 		blocks[i].DrawBlock(gfx);
 	}
+
+	for (int i = 0; i < amountOfPoints; ++i)
+	{
+		points[i].DrawPoint(gfx);
+	}
+
+	goal.DrawGoal(gfx);
 }

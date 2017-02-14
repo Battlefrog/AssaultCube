@@ -57,8 +57,11 @@ public:
 	}
 	void PutPixel( int x,int y,Color c );
 	void DrawRect(int x0, int y0, int x1, int y1, Color c);
-	// Don't have to impliment it in .cpp, do it where it makes sense.
-	// Also, can't overload becuase of the complier's rules.
+	// 1st - X Pos of object
+	// 2nd - Y Pos of object
+	// 3rd - Width of object
+	// 4th - Height of object
+	// 5th - Color of object
 	void DrawRectDim(int x0, int y0, int width, int height, Color c)
 	{
 		DrawRect(x0, y0, x0 + width, y0 + height, c);

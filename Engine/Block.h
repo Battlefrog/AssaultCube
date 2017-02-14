@@ -6,10 +6,13 @@ class Block
 {
 public:
 
-	bool IsCollidingWithPlayer(Player& player) const;
+	bool IsCollidingWithPlayer(Player& player);
 
 	void InitBlock(int in_x, int in_y, int in_width, int in_height);
 	void DrawBlock(Graphics& gfx);
+
+	int CalculateWidth(int originalWidth);
+	int CalculateHeight(int originalHeight);
 
 	const int GetBlockX() const;
 	const int GetBlockY() const;
