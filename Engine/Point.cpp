@@ -31,7 +31,7 @@ bool Point::IsPlayerColliding(Player player)
 	}
 }
 
-void Point::DrawPoint(Graphics & gfx)
+void Point::DrawPoint(Graphics& gfx)
 {
 	if (isCollected == false)
 	{

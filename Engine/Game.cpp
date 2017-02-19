@@ -24,8 +24,8 @@
 Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
-	gfx( wnd )
-	//crashIntoWall(L"intoWall.wav"),
+	gfx( wnd ),
+	crashIntoWall(L"intoWall.wav")
 	//getPoint(L"pointPickup.wav"),
 	//winLevel(L"completeLevel.wav")
 {
@@ -64,7 +64,7 @@ Game::Game( MainWindow& wnd )
 
 	/* Points */
 
-	points[0].InitPoint(350, 200);
+	points[0].InitPoint(700, 150);
 	points[1].InitPoint(40, 460);
 }
 
@@ -89,7 +89,7 @@ void Game::UpdateModel()
 		{
 			player.ResetPlayer();
 			player.SetTimesReset(player.numberOfTimesReset++);
-			//crashIntoWall.Play();
+			crashIntoWall.Play();
 		}
 	}
 
