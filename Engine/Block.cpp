@@ -2,17 +2,17 @@
 
 //TODO: Function does not report collisions to blocks
 //with negative width and heights
-bool Block::IsCollidingWithPlayer(Player& player)
+bool Block::IsCollidingWithPlayer( Player& player )
 {
 	int playerRight = player.GetX() + player.GetWidth();
 	int playerBottom = player.GetY() + player.GetHeight();
-	int blockRight = CalculateWidth(width);
-	int blockBottom = CalculateHeight(height);
+	int blockRight = CalculateWidth( width );
+	int blockBottom = CalculateHeight( height );
 
-	if (playerRight >= boxX &&
-		player.GetX() <= blockRight &&
-		playerBottom >= boxY &&
-		player.GetY() <= blockBottom == true)
+	if ( playerRight >= boxX &&
+		 player.GetX() <= blockRight &&
+		 playerBottom >= boxY &&
+		 player.GetY() <= blockBottom == true )
 	{
 		return true;
 	}
@@ -22,7 +22,7 @@ bool Block::IsCollidingWithPlayer(Player& player)
 	}
 }
 
-void Block::InitBlock(int in_x, int in_y, int in_width, int in_height)
+void Block::InitBlock( int in_x, int in_y, int in_width, int in_height )
 {
 	boxX = in_x;
 	boxY = in_y;
@@ -30,14 +30,14 @@ void Block::InitBlock(int in_x, int in_y, int in_width, int in_height)
 	height = in_height;
 }
 
-void Block::DrawBlock(Graphics & gfx)
+void Block::DrawBlock( Graphics & gfx )
 {
-	gfx.DrawRectDim(boxX, boxY, width, height, blockColor);
+	gfx.DrawRectDim( boxX, boxY, width, height, blockColor );
 }
 
-int Block::CalculateWidth(int originalWidth)
+int Block::CalculateWidth( int originalWidth )
 {
-	if (originalWidth < 0)
+	if ( originalWidth < 0 )
 	{
 		return boxX - originalWidth;
 	}
@@ -47,9 +47,9 @@ int Block::CalculateWidth(int originalWidth)
 	}
 }
 
-int Block::CalculateHeight(int originalHeight)
+int Block::CalculateHeight( int originalHeight )
 {
-	if (originalHeight < 0)
+	if ( originalHeight < 0 )
 	{
 		return boxY - originalHeight;
 	}

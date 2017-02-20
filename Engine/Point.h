@@ -2,23 +2,24 @@
 
 #include "Graphics.h"
 #include "Player.h"
+#include "Sound.h"
 
 class Point
 {
 
-public:
+	public:
 
 	const int GetX() const;
 	const int GetY() const;
 
-	bool IsPlayerColliding(Player player);
+	bool IsPlayerColliding( Player player );
 
-	void DrawPoint(Graphics& gfx);
-	void InitPoint(int in_x, int in_y);
+	void DrawPoint( Graphics& gfx );
+	void InitPoint( int in_x, int in_y );
 
 	bool isCollected = false;
 
-private:
+	private:
 
 	int x;
 	int y;
@@ -27,4 +28,6 @@ private:
 	static constexpr int height = 45;
 
 	Color pointColor = Colors::Blue;
+
+	Sound getPoint = L"pointPickup.wav";
 };

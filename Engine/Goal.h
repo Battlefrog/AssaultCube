@@ -6,17 +6,17 @@
 class Goal
 {
 
-public:
+	public:
 
 	const int GetX() const;
 	const int GetY() const;
 
-	bool IsPlayerColliding(Player player);
+	bool IsPlayerColliding( Player player );
 
-	void DrawGoal(Graphics& gfx) const;
-	void InitGoal(int in_x, int in_y);
+	void DrawGoal( Graphics& gfx ) const;
+	void InitGoal( int in_x, int in_y );
 
-private:
+	private:
 
 	int x;
 	int y;

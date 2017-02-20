@@ -9,11 +9,11 @@
 class GameManager
 {
 
-public:
+	public:
 
-	void HandleCommonInputs(const Keyboard& kbd, Player& player, MainWindow& wnd);
+	void HandleCommonInputs( const Keyboard& kbd, Player& player, MainWindow& wnd );
 	void PlaySound();
 
-private:
+	private:
 
 };

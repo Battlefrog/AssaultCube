@@ -5,22 +5,22 @@ void Player::IsOutsideBoundries()
 	const int right = x + width;
 	const int bottom = y + height;
 
-	if (x < 0)
+	if ( x < 0 )
 	{
 		x = 0;
 	}
-	else if (right >= Graphics::ScreenWidth)
+	else if ( right >= Graphics::ScreenWidth )
 	{
-		x = (Graphics::ScreenWidth - 1) - width;
+		x = ( Graphics::ScreenWidth - 1 ) - width;
 	}
 
-	if (y < 0)
+	if ( y < 0 )
 	{
 		y = 0;
 	}
-	else if (bottom >= Graphics::ScreenHeight)
+	else if ( bottom >= Graphics::ScreenHeight )
 	{
-		y = (Graphics::ScreenHeight - 1) - height;
+		y = ( Graphics::ScreenHeight - 1 ) - height;
 	}
 }
 
@@ -57,32 +57,32 @@ int Player::GetHeight() const
 	return height;
 }
 
-int Player::SetTimesReset(int newValue)
+int Player::SetTimesReset( int newValue )
 {
 	return newValue;
 }
 
-void Player::UpdateInput(const Keyboard& kbd)
+void Player::UpdateInput( const Keyboard& kbd )
 {
-	if (kbd.KeyIsPressed(VK_RIGHT))
+	if ( kbd.KeyIsPressed( VK_RIGHT ) )
 	{
 		x += playerSpeed;
 	}
-	if (kbd.KeyIsPressed(VK_LEFT))
+	if ( kbd.KeyIsPressed( VK_LEFT ) )
 	{
 		x -= playerSpeed;
 	}
-	if (kbd.KeyIsPressed(VK_UP))
+	if ( kbd.KeyIsPressed( VK_UP ) )
 	{
 		y -= playerSpeed;
 	}
-	if (kbd.KeyIsPressed(VK_DOWN))
+	if ( kbd.KeyIsPressed( VK_DOWN ) )
 	{
 		y += playerSpeed;
 	}
 }
 
-void Player::DrawPlayer(Graphics & gfx) const
+void Player::DrawPlayer( Graphics & gfx ) const
 {
-	gfx.DrawRectDim(x, y, width, height, playerColor);
+	gfx.DrawRectDim( x, y, width, height, playerColor );
 }

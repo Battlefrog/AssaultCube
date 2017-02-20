@@ -10,18 +10,19 @@ const int Point::GetY() const
 	return y;
 }
 
-bool Point::IsPlayerColliding(Player player)
+bool Point::IsPlayerColliding( Player player )
 {
 	const int playerRight = player.GetX() + player.GetWidth();
 	const int playerBottom = player.GetY() + player.GetHeight();
 	const int pointRight = x + width;
 	const int pointBottom = y + height;
 
-	if (playerRight >= x &&
-		player.GetX() <= pointRight &&
-		playerBottom >= y &&
-		player.GetY() <= pointBottom == true)
+	if ( playerRight >= x &&
+		 player.GetX() <= pointRight &&
+		 playerBottom >= y &&
+		 player.GetY() <= pointBottom == true )
 	{
+		getPoint.Play();
 		return true;
 		isCollected = true;
 	}
@@ -31,15 +32,15 @@ bool Point::IsPlayerColliding(Player player)
 	}
 }
 
-void Point::DrawPoint(Graphics& gfx)
+void Point::DrawPoint( Graphics& gfx )
 {
-	if (isCollected == false)
+	if ( isCollected == false )
 	{
-		gfx.DrawRectDim(x, y, width, height, pointColor);
+		gfx.DrawRectDim( x, y, width, height, pointColor );
 	}
 }
 
-void Point::InitPoint(int in_x, int in_y)
+void Point::InitPoint( int in_x, int in_y )
 {
 	x = in_x;
 	y = in_y;

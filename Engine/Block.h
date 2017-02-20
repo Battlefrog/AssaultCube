@@ -4,22 +4,22 @@
 
 class Block
 {
-public:
+	public:
 
-	bool IsCollidingWithPlayer(Player& player);
+	bool IsCollidingWithPlayer( Player& player );
 
-	void InitBlock(int in_x, int in_y, int in_width, int in_height);
-	void DrawBlock(Graphics& gfx);
+	void InitBlock( int in_x, int in_y, int in_width, int in_height );
+	void DrawBlock( Graphics& gfx );
 
-	int CalculateWidth(int originalWidth);
-	int CalculateHeight(int originalHeight);
+	int CalculateWidth( int originalWidth );
+	int CalculateHeight( int originalHeight );
 
 	const int GetBlockX() const;
 	const int GetBlockY() const;
 	const int GetBlockWidth() const;
 	const int GetBlockHeight() const;
 
-private:
+	private:
 	int boxX;
 	int boxY;
 	int width;

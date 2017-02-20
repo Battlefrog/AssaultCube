@@ -6,7 +6,7 @@
 class Player
 {
 
-public:
+	public:
 
 	Player();
 
@@ -15,17 +15,17 @@ public:
 
 	int GetWidth() const;
 	int GetHeight() const;
-	int SetTimesReset(int newValue);
+	int SetTimesReset( int newValue );
 
-	void UpdateInput(const Keyboard& kbd);
-	void DrawPlayer(Graphics& gfx) const;
+	void UpdateInput( const Keyboard& kbd );
+	void DrawPlayer( Graphics& gfx ) const;
 	void IsOutsideBoundries();
 	void ResetPlayer();
 
 	int playerSpeed = 1;
 	int numberOfTimesReset = 0;
 
-private:
+	private:
 
 	int x;
 	int y;
