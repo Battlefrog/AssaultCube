@@ -28,6 +28,7 @@
 #include "Sound.h"
 #include "Goal.h"
 #include "GameManager.h"
+#include "FrameTimer.h"
 #include "Point.h"
 
 class Game
@@ -53,7 +54,7 @@ class Game
 	static constexpr int amountOfPoints = 1;
 
 	bool isPointCollected = false;
-	bool ActiveTitleScreen = true;
+	bool ActiveTitleScreen = false;
 
 	Player player;
 
@@ -65,6 +66,8 @@ class Game
 	Sound crashIntoWall;
 
 	GameManager gameManager;
+
+	FrameTimer ft;
 
 	/********************************/
 };

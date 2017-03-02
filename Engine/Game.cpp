@@ -76,11 +76,14 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+
+	float dt = ft.Mark();
+
 	for ( int i = 0; i <= amountOfBlocks; ++i )
 	{
 		if ( !blocks[ i ].IsCollidingWithPlayer( player ) )
 		{
-			player.UpdateInput( wnd.kbd );
+			player.UpdateInput( wnd.kbd, dt );
 			player.IsOutsideBoundries();
 		}
 		else

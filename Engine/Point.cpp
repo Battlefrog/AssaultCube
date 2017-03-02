@@ -33,6 +33,7 @@ bool Point::IsCollidingWithPlayer( Player player )
 			return false;
 		}
 	}
+	return false;
 }
 
 void Point::DrawPoint( Graphics& gfx )
