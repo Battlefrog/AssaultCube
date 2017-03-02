@@ -9,8 +9,8 @@ class Player
 
 	Player();
 
-	const int GetX() const;
-	const int GetY() const;
+	const float GetX() const;
+	const float GetY() const;
 
 	int GetWidth() const;
 	int GetHeight() const;
@@ -26,11 +26,11 @@ class Player
 
 	private:
 
-	int x;
-	int y;
+	float x;
+	float y;
 
-	int startingX = 50;
-	int startingY = 75;
+	float startingX = 50.0f;
+	float startingY = 75.0f;
 
 	static constexpr int width = 15;
 	static constexpr int height = 15;

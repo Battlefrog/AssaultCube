@@ -4,15 +4,15 @@
 //with negative width and heights
 bool Block::IsCollidingWithPlayer( Player& player )
 {
-	int playerRight = player.GetX() + player.GetWidth();
-	int playerBottom = player.GetY() + player.GetHeight();
+	float playerRight = player.GetX() + player.GetWidth();
+	float playerBottom = player.GetY() + player.GetHeight();
 	int blockRight = CalculateWidth( width );
 	int blockBottom = CalculateHeight( height );
 
 	if ( playerRight >= boxX &&
-		 player.GetX() <= blockRight &&
+		 player.GetX() <= float(blockRight) &&
 		 playerBottom >= boxY &&
-		 player.GetY() <= blockBottom == true )
+		 player.GetY() <= float(blockBottom) == true )
 	{
 		return true;
 	}

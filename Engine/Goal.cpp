@@ -12,15 +12,15 @@ const int Goal::GetY() const
 
 bool Goal::IsPlayerColliding( Player player )
 {
-	const int playerRight = player.GetX() + player.GetWidth();
-	const int playerBottom = player.GetY() + player.GetHeight();
+	const float playerRight = player.GetX() + player.GetWidth();
+	const float playerBottom = player.GetY() + player.GetHeight();
 	const int goalRight = x + width;
 	const int goalBottom = y + height;
 
 	if ( playerRight >= x &&
-		 player.GetX() <= goalRight &&
+		 player.GetX() <= float(goalRight) &&
 		 playerBottom >= y &&
-		 player.GetY() <= goalBottom == true )
+		 player.GetY() <= float(goalBottom) == true )
 	{
 		return true;
 	}
