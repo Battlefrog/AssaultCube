@@ -2,6 +2,7 @@
 
 #include "Graphics.h"
 #include "Player.h"
+#include "Sound.h"
 
 class Goal
 {
@@ -15,6 +16,7 @@ class Goal
 
 	void DrawGoal( Graphics& gfx ) const;
 	void InitGoal( int in_x, int in_y );
+	void PlayerCollision();
 
 	private:
 
@@ -25,4 +27,6 @@ class Goal
 	static constexpr int height = 15;
 
 	Color goalColor = Colors::Yellow;
+
+	Sound levelEnd = L"completeLevel.wav";
 };

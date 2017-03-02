@@ -10,25 +10,28 @@ const int Point::GetY() const
 	return y;
 }
 
-bool Point::IsPlayerColliding( Player player )
+bool Point::IsCollidingWithPlayer( Player player )
 {
-	const int playerRight = player.GetX() + player.GetWidth();
-	const int playerBottom = player.GetY() + player.GetHeight();
-	const int pointRight = x + width;
-	const int pointBottom = y + height;
+	if ( !isCollected )
+	{
+		const int playerRight = player.GetX() + player.GetWidth();
+		const int playerBottom = player.GetY() + player.GetHeight();
+		const int pointRight = x + width;
+		const int pointBottom = y + height;
 
-	if ( playerRight >= x &&
-		 player.GetX() <= pointRight &&
-		 playerBottom >= y &&
-		 player.GetY() <= pointBottom == true )
-	{
-		getPoint.Play();
-		return true;
-		isCollected = true;
-	}
-	else
-	{
-		return false;
+		if ( playerRight >= x &&
+			 player.GetX() <= pointRight &&
+			 playerBottom >= y &&
+			 player.GetY() <= pointBottom == true )
+		{
+			getPoint.Play();
+			isCollected = true;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }
 
