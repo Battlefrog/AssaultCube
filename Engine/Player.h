@@ -13,28 +13,28 @@ class Player
 	const int GetX() const;
 	const int GetY() const;
 
-	int GetWidth() const;
-	int GetHeight() const;
+	float GetWidth() const;
+	float GetHeight() const;
 	int SetTimesReset( int newValue );
 
-	void UpdateInput( const Keyboard& kbd );
+	void UpdateInput( const Keyboard& kbd, float dt );
 	void DrawPlayer( Graphics& gfx ) const;
 	void IsOutsideBoundries();
 	void ResetPlayer();
 
-	int playerSpeed = 1;
+	float playerSpeed = 60.0f;
 	int numberOfTimesReset = 0;
 
 	private:
 
-	int x;
-	int y;
+	float x;
+	float y;
 
 	int startingX = 50;
 	int startingY = 75;
 
-	static constexpr int width = 15;
-	static constexpr int height = 15;
+	static constexpr float width = 15.0f;
+	static constexpr float height = 15.0f;
 
 	Color playerColor = Colors::Green;
 };

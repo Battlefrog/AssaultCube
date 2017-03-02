@@ -62,23 +62,23 @@ int Player::SetTimesReset( int newValue )
 	return newValue;
 }
 
-void Player::UpdateInput( const Keyboard& kbd )
+void Player::UpdateInput( const Keyboard& kbd, float dt )
 {
 	if ( kbd.KeyIsPressed( VK_RIGHT ) )
 	{
-		x += playerSpeed;
+		x += playerSpeed * dt;
 	}
 	if ( kbd.KeyIsPressed( VK_LEFT ) )
 	{
-		x -= playerSpeed;
+		x -= playerSpeed * dt;
 	}
 	if ( kbd.KeyIsPressed( VK_UP ) )
 	{
-		y -= playerSpeed;
+		y -= playerSpeed * dt;
 	}
 	if ( kbd.KeyIsPressed( VK_DOWN ) )
 	{
-		y += playerSpeed;
+		y += playerSpeed * dt;
 	}
 }
 
