@@ -64,7 +64,6 @@ Game::Game( MainWindow& wnd )
 	/* Points */
 
 	points[ 0 ].InitPoint( 700, 150 );
-	points[ 1 ].InitPoint( 40, 460 );
 }
 
 void Game::Go()
@@ -92,21 +91,47 @@ void Game::UpdateModel()
 		}
 	}
 
-	gameManager.HandleCommonInputs( wnd.kbd, player, wnd );
+	for ( int i = 0; i <= amountOfPoints; ++i )
+	{
+		if ( points[ i ].IsCollidingWithPlayer( player ) )
+		{
+			isPointCollected = true;
+		}
+	}
+
+	if ( isPointCollected == true )
+	{
+		if ( goal.IsPlayerColliding( player ) )
+		{
+			goal.PlayerCollision();
+		}
+	}
+
+	gameManager.HandleCommonInputs( wnd.kbd, player );
 }
 
 void Game::ComposeFrame()
 {
-	player.DrawPlayer( gfx );
-	for ( int i = 0; i < amountOfBlocks; ++i )
+	if ( !ActiveTitleScreen )
 	{
-		blocks[ i ].DrawBlock( gfx );
-	}
+		player.DrawPlayer( gfx );
+		for ( int i = 0; i < amountOfBlocks; ++i )
+		{
+			blocks[ i ].DrawBlock( gfx );
+		}
 
-	for ( int i = 0; i < amountOfPoints; ++i )
+		for ( int i = 0; i < amountOfPoints; ++i )
+		{
+			if ( isPointCollected )
+			{
+				points[ i ].DrawPoint( gfx );
+			}
+		}
+
+		goal.DrawGoal( gfx );
+	}
+	else
 	{
-		points[ i ].DrawPoint( gfx );
+		gameManager.DrawTitleScreen( gfx, gfx.ScreenWidth / 2, gfx.ScreenHeight / 2 );
 	}
-
-	goal.DrawGoal( gfx );
 }

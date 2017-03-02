@@ -50,7 +50,10 @@ class Game
 	/*  User Variables              */
 
 	static constexpr int amountOfBlocks = 14;
-	static constexpr int amountOfPoints = 2;
+	static constexpr int amountOfPoints = 1;
+
+	bool isPointCollected = false;
+	bool ActiveTitleScreen = true;
 
 	Player player;
 
@@ -60,8 +63,6 @@ class Game
 	Point points[ amountOfPoints ];
 
 	Sound crashIntoWall;
-
-	Sound winLevel;
 
 	GameManager gameManager;
 

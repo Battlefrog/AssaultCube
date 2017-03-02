@@ -40,3 +40,8 @@ void Goal::InitGoal( int in_x, int in_y )
 	x = in_x;
 	y = in_y;
 }
+
+void Goal::PlayerCollision()
+{
+	levelEnd.Play();
+}
