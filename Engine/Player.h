@@ -30,8 +30,8 @@ class Player
 	float x;
 	float y;
 
-	int startingX = 50;
-	int startingY = 75;
+	float startingX = 50.0f;
+	float startingY = 75.0f;
 
 	static constexpr float width = 15.0f;
 	static constexpr float height = 15.0f;

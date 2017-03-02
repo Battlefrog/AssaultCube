@@ -7,6 +7,7 @@ const float Point::GetX() const
 
 const float Point::GetY() const
 {
+	return y;
 }
 
 bool Point::IsCollidingWithPlayer( Player& player )

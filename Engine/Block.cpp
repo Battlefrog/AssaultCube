@@ -4,8 +4,8 @@
 //with negative width and heights
 bool Block::IsCollidingWithPlayer( Player& player )
 {
-	int playerRight = player.GetX() + player.GetWidth();
-	int playerBottom = player.GetY() + player.GetHeight();
+	int playerRight = int(player.GetX()) + int(player.GetWidth());
+	int playerBottom = int(player.GetY()) + int(player.GetHeight());
 	int blockRight = CalculateWidth( width );
 	int blockBottom = CalculateHeight( height );
 
