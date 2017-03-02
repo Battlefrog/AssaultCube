@@ -66,19 +66,19 @@ void Player::UpdateInput( const Keyboard& kbd, float dt )
 {
 	if ( kbd.KeyIsPressed( VK_RIGHT ) )
 	{
-		x += playerSpeed * dt;
+		x += float( playerSpeed ) * dt;
 	}
 	if ( kbd.KeyIsPressed( VK_LEFT ) )
 	{
-		x -= playerSpeed * dt;
+		x -= float( playerSpeed ) * dt;
 	}
 	if ( kbd.KeyIsPressed( VK_UP ) )
 	{
-		y -= playerSpeed * dt;
+		y -= float( playerSpeed ) * dt;
 	}
 	if ( kbd.KeyIsPressed( VK_DOWN ) )
 	{
-		y += playerSpeed * dt;
+		y += float( playerSpeed ) * dt;
 	}
 }
 

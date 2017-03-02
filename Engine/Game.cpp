@@ -77,7 +77,7 @@ void Game::Go()
 void Game::UpdateModel()
 {
 
-	const float dt = ft.Mark();
+	float dt = ft.Mark();
 
 	for ( int i = 0; i <= amountOfBlocks; ++i )
 	{
