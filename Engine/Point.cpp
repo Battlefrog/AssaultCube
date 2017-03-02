@@ -1,23 +1,22 @@
 #include "Point.h"
 
-const int Point::GetX() const
+const float Point::GetX() const
 {
 	return x;
 }
 
-const int Point::GetY() const
+const float Point::GetY() const
 {
-	return y;
 }
 
-bool Point::IsCollidingWithPlayer( Player player )
+bool Point::IsCollidingWithPlayer( Player& player )
 {
 	if ( !isCollected )
 	{
-		const int playerRight = player.GetX() + player.GetWidth();
-		const int playerBottom = player.GetY() + player.GetHeight();
-		const int pointRight = x + width;
-		const int pointBottom = y + height;
+		const float playerRight = player.GetX() + player.GetWidth();
+		const float playerBottom = player.GetY() + player.GetHeight();
+		const float pointRight = x + width;
+		const float pointBottom = y + height;
 
 		if ( playerRight >= x &&
 			 player.GetX() <= pointRight &&
@@ -40,11 +39,11 @@ void Point::DrawPoint( Graphics& gfx )
 {
 	if ( isCollected == false )
 	{
-		gfx.DrawRectDim( x, y, width, height, pointColor );
+		gfx.DrawRectDim( int(x), int(y), int(width), int(height), pointColor );
 	}
 }
 
-void Point::InitPoint( int in_x, int in_y )
+void Point::InitPoint( float in_x, float in_y )
 {
 	x = in_x;
 	y = in_y;

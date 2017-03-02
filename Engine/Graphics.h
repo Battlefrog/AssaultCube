@@ -57,6 +57,7 @@ class Graphics
 	}
 	void PutPixel( int x, int y, Color c );
 	void DrawRect( int x0, int y0, int x1, int y1, Color c );
+
 	// 1st - X Pos of object
 	// 2nd - Y Pos of object
 	// 3rd - Width of object

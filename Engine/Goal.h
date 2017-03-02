@@ -9,22 +9,22 @@ class Goal
 
 	public:
 
-	const int GetX() const;
-	const int GetY() const;
+	const float GetX() const;
+	const float GetY() const;
 
-	bool IsPlayerColliding( Player player );
+	bool IsPlayerColliding( Player& player );
 
 	void DrawGoal( Graphics& gfx ) const;
-	void InitGoal( int in_x, int in_y );
+	void InitGoal( float in_x, float in_y );
 	void PlayerCollision();
 
 	private:
 
-	int x;
-	int y;
+	float x;
+	float y;
 
-	static constexpr int width = 15;
-	static constexpr int height = 15;
+	static constexpr float width = 15.0f;
+	static constexpr float height = 15.0f;
 
 	Color goalColor = Colors::Yellow;
 

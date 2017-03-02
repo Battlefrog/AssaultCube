@@ -1,21 +1,21 @@
 #include "Goal.h"
 
-const int Goal::GetX() const
+const float Goal::GetX() const
 {
 	return x;
 }
 
-const int Goal::GetY() const
+const float Goal::GetY() const
 {
 	return y;
 }
 
-bool Goal::IsPlayerColliding( Player player )
+bool Goal::IsPlayerColliding( Player& player )
 {
-	const int playerRight = player.GetX() + player.GetWidth();
-	const int playerBottom = player.GetY() + player.GetHeight();
-	const int goalRight = x + width;
-	const int goalBottom = y + height;
+	const float playerRight = player.GetX() + player.GetWidth();
+	const float playerBottom = player.GetY() + player.GetHeight();
+	const float goalRight = x + width;
+	const float goalBottom = y + height;
 
 	if ( playerRight >= x &&
 		 player.GetX() <= goalRight &&
@@ -35,7 +35,7 @@ void Goal::DrawGoal( Graphics & gfx ) const
 	gfx.DrawRectDim( x, y, width, height, goalColor );
 }
 
-void Goal::InitGoal( int in_x, int in_y )
+void Goal::InitGoal( float in_x, float in_y )
 {
 	x = in_x;
 	y = in_y;

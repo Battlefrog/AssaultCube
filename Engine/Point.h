@@ -9,23 +9,23 @@ class Point
 
 	public:
 
-	const int GetX() const;
-	const int GetY() const;
+	const float GetX() const;
+	const float GetY() const;
 
-	bool IsCollidingWithPlayer( Player player );
+	bool IsCollidingWithPlayer( Player& player );
 
 	void DrawPoint( Graphics& gfx );
-	void InitPoint( int in_x, int in_y );
+	void InitPoint( float in_x, float in_y );
 
 	bool isCollected = false;
 
 	private:
 
-	int x;
-	int y;
+	float x;
+	float y;
 
-	static constexpr int width = 15;
-	static constexpr int height = 45;
+	static constexpr float width = 15.0f;
+	static constexpr float height = 45.0f;
 
 	Color pointColor = Colors::Blue;
 

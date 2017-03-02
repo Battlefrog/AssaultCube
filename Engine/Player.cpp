@@ -2,25 +2,25 @@
 
 void Player::IsOutsideBoundries()
 {
-	const int right = x + width;
-	const int bottom = y + height;
+	const float right = x + width;
+	const float bottom = y + height;
 
 	if ( x < 0 )
 	{
 		x = 0;
 	}
-	else if ( right >= Graphics::ScreenWidth )
+	else if ( right >= float( Graphics::ScreenWidth ) )
 	{
-		x = ( Graphics::ScreenWidth - 1 ) - width;
+		x = float( Graphics::ScreenWidth - 1 ) - width;
 	}
 
 	if ( y < 0 )
 	{
 		y = 0;
 	}
-	else if ( bottom >= Graphics::ScreenHeight )
+	else if ( bottom >= float( Graphics::ScreenHeight ) )
 	{
-		y = ( Graphics::ScreenHeight - 1 ) - height;
+		y = float( Graphics::ScreenHeight - 1 ) - height;
 	}
 }
 
@@ -37,22 +37,22 @@ Player::Player()
 	y = startingY;
 }
 
-const int Player::GetX() const
+const float Player::GetX() const
 {
 	return x;
 }
 
-const int Player::GetY() const
+const float Player::GetY() const
 {
 	return y;
 }
 
-int Player::GetWidth() const
+float Player::GetWidth() const
 {
 	return width;
 }
 
-int Player::GetHeight() const
+float Player::GetHeight() const
 {
 	return height;
 }

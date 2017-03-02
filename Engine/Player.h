@@ -10,8 +10,8 @@ class Player
 
 	Player();
 
-	const int GetX() const;
-	const int GetY() const;
+	const float GetX() const;
+	const float GetY() const;
 
 	float GetWidth() const;
 	float GetHeight() const;
