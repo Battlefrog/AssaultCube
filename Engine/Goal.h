@@ -13,10 +13,10 @@ class Goal
 	const int GetY() const;
 
 	bool IsPlayerColliding( Player player );
+	bool PlayerCollision();
 
 	void DrawGoal( Graphics& gfx ) const;
 	void InitGoal( int in_x, int in_y );
-	void PlayerCollision();
 
 	private:
 
