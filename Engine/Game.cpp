@@ -118,6 +118,7 @@ void Game::ComposeFrame()
 	if ( !ActiveTitleScreen )
 	{
 		player.DrawPlayer( gfx );
+
 		for ( int i = 0; i < amountOfBlocks; ++i )
 		{
 			blocks[ i ].DrawBlock( gfx );
@@ -125,10 +126,7 @@ void Game::ComposeFrame()
 
 		for ( int i = 0; i < amountOfPoints; ++i )
 		{
-			if ( isPointCollected )
-			{
-				points[ i ].DrawPoint( gfx );
-			}
+			points[ i ].DrawPoint( gfx );
 		}
 
 		goal.DrawGoal( gfx );
