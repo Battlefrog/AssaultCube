@@ -1,3 +1,11 @@
+/*
+AssaultCube
+Class: Points
+Purpose: The blocks that let you exit the level!
+
+@author Battlefrog
+*/
+
 #pragma once
 
 #include "Graphics.h"

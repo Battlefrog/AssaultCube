@@ -1,3 +1,11 @@
+/*
+AssaultCube
+Class: FrameTimer
+Purpose: DeltaTime and Frame-rate Idependence
+
+@author Battlefrog
+*/
+
 #pragma once
 #include <chrono> 
 

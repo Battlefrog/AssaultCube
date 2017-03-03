@@ -56,7 +56,15 @@ class Graphics
 	{
 		PutPixel( x, y, { unsigned char( r ),unsigned char( g ),unsigned char( b ) } );
 	}
+	// 1st - X Pos of object
+	// 2nd - Y Pos of object
+	// 3rd - Color of object
 	void PutPixel( int x, int y, Color c );
+	// 1st - X Pos of object
+	// 2nd - Y Pos of object
+	// 3rd - Width of object
+	// 4th - Height of object
+	// 5th - Color of object
 	void DrawRect( int x0, int y0, int x1, int y1, Color c );
 	// 1st - X Pos of object
 	// 2nd - Y Pos of object

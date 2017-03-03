@@ -1,3 +1,11 @@
+/*
+AssaultCube
+Class: Blocks
+Purpose: The blocks that kill you when you touch
+
+@author Battlefrog
+*/
+
 #pragma once
 
 #include "Player.h"
@@ -20,6 +28,7 @@ class Block
 	const int GetBlockHeight() const;
 
 	private:
+
 	int boxX;
 	int boxY;
 	int width;

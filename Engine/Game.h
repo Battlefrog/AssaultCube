@@ -55,7 +55,6 @@ class Game
 
 	bool isPointCollected = false;
 	bool ActiveTitleScreen = false;
-	bool levelEnd = false;
 
 	Player player;
 

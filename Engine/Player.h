@@ -1,3 +1,11 @@
+/*
+AssaultCube
+Class: Player
+Purpose: The dude you move around!
+
+@author Battlefrog
+*/
+
 #pragma once
 
 #include "Graphics.h"
