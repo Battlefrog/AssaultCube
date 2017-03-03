@@ -41,8 +41,10 @@ void Goal::InitGoal( int in_x, int in_y )
 	y = in_y;
 }
 
-bool Goal::PlayerCollision()
+// TODO: Move onto the next level, perhaps?
+bool Goal::PlayerCollision(MainWindow& wnd)
 {
 	levelEnd.Play();
+	wnd.Kill();
 	return true;
 }

@@ -3,6 +3,8 @@
 #include "Graphics.h"
 #include "Player.h"
 #include "Sound.h"
+#include "GameManager.h"
+#include "MainWindow.h"
 
 class Goal
 {
@@ -13,8 +15,8 @@ class Goal
 	const int GetY() const;
 
 	bool IsPlayerColliding( Player player );
-	bool PlayerCollision();
-
+	bool PlayerCollision(MainWindow& wnd);
+	
 	void DrawGoal( Graphics& gfx ) const;
 	void InitGoal( int in_x, int in_y );
 
