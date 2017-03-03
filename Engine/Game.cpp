@@ -106,11 +106,11 @@ void Game::UpdateModel()
 	{
 		if ( goal.IsPlayerColliding( player ) )
 		{
-			goal.PlayerCollision();
+			goal.PlayerCollision(wnd);
 		}
 	}
 
-	gameManager.HandleCommonInputs( wnd.kbd, player );
+	gameManager.HandleCommonInputs( wnd.kbd, wnd, player );
 }
 
 void Game::ComposeFrame()
