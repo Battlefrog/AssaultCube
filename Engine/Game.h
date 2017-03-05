@@ -50,7 +50,7 @@ class Game
 	/********************************/
 	/*  User Variables              */
 
-	static constexpr int amountOfBlocks = 14;
+	static constexpr int amountOfBlocks = 15;
 	static constexpr int amountOfPoints = 1;
 
 	bool isPointCollected = false;

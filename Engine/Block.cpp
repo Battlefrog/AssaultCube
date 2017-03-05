@@ -14,6 +14,7 @@ bool Block::IsCollidingWithPlayer( Player& player )
 		 playerBottom >= boxY &&
 		 player.GetY() <= float(blockBottom) == true )
 	{
+		PlaySound();
 		return true;
 	}
 	else
@@ -33,6 +34,11 @@ void Block::InitBlock( int in_x, int in_y, int in_width, int in_height )
 void Block::DrawBlock( Graphics & gfx )
 {
 	gfx.DrawRectDim( boxX, boxY, width, height, blockColor );
+}
+
+void Block::PlaySound()
+{
+	blockCollision.Play();
 }
 
 int Block::CalculateWidth( int originalWidth )

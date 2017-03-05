@@ -1,3 +1,11 @@
+/*
+AssaultCube
+Class: Goal
+Purpose: Where you move to the next level!
+
+@author Battlefrog
+*/
+
 #pragma once
 
 #include "Graphics.h"

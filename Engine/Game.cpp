@@ -24,15 +24,8 @@
 Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
-	gfx( wnd ),
-	crashIntoWall( L"intoWall.wav" )
-	//winLevel(L"completeLevel.wav")
+	gfx( wnd )
 {
-
-	/* CONSTANTS OF THE BLOCKS */
-	/* THEY ARE NORMALLY 15 x 15 */
-	/* AND ALSO DON'T FORGET TO UPDATE */
-	/* AMOUNT OF BLOCKS IF theGame GETS CORRUPTED */
 
 	/* LEVEL 1 */
 
@@ -60,6 +53,7 @@ Game::Game( MainWindow& wnd )
 	blocks[ 11 ].InitBlock( 100, 510, 15, 60 );
 	blocks[ 12 ].InitBlock( 275, 285, 100, 15 );
 	blocks[ 13 ].InitBlock( 300, 300, 50, 50 );
+	blocks[ 14 ].InitBlock( 570, 350, 200, 15 );
 
 	/* Points */
 
@@ -90,7 +84,6 @@ void Game::UpdateModel()
 		{
 			player.ResetPlayer();
 			player.SetTimesReset( player.numberOfTimesReset++ );
-			crashIntoWall.Play();
 		}
 	}
 
