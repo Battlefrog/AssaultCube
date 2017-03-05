@@ -44,20 +44,20 @@ Game::Game( MainWindow& wnd )
 	blocks[ 4 ].InitBlock( 155, 30, 15, 300 );
 	blocks[ 5 ].InitBlock( 20, 375, 200, 15 );
 	blocks[ 6 ].InitBlock( 20, 150, 75, 15 );
-	blocks[ 7 ].InitBlock( 260, 240, 15, 45 );
+	blocks[ 7 ].InitBlock( 260, 240, 15, 60 );
 	blocks[ 8 ].InitBlock( 275, 30, 110, 210 );
 
 	// 2nd Challenge
 	blocks[ 9 ].InitBlock( 300, 300, 15, 45 );
-	blocks[ 10 ].InitBlock( 100, 380, 15, 75 );
-	blocks[ 11 ].InitBlock( 100, 510, 15, 60 );
+	blocks[ 10 ].InitBlock( 600, 360, 15, 75 );
+	blocks[ 11 ].InitBlock( 600, 490, 15, 75 );
 	blocks[ 12 ].InitBlock( 275, 285, 100, 15 );
 	blocks[ 13 ].InitBlock( 300, 300, 50, 50 );
 	blocks[ 14 ].InitBlock( 570, 350, 200, 15 );
 
 	/* Points */
 
-	points[ 0 ].InitPoint( 700, 150 );
+	points[ 0 ].InitPoint( 700, 440 );
 }
 
 void Game::Go()
