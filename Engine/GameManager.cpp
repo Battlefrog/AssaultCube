@@ -18,3 +18,7 @@ void GameManager::DrawTitleScreen( Graphics & gfx, int x, int y )
 	// TODO: Impliment titlescreen here when .bmp loading is a thing ;)
 }
 
+void GameManager::PlayBackgroundMusic()
+{
+}
+

@@ -11,11 +11,8 @@ Purpose: Condences a bunch of nice things that shouldn't be in Game.cpp
 #include "Keyboard.h"
 #include "Player.h"
 #include "Sound.h"
-#include "Point.h"
 #include "Graphics.h"
 #include "MainWindow.h"
-
-
 
 class GameManager
 {
@@ -23,4 +20,5 @@ class GameManager
 
 	void HandleCommonInputs( const Keyboard& kbd, MainWindow& wnd, Player& player);
 	void DrawTitleScreen(Graphics& gfx, int x, int y);
+	void PlayBackgroundMusic();
 };
