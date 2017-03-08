@@ -26,7 +26,7 @@
 
 class SoundEffect
 {
-	public:
+public:
 	SoundEffect( const std::initializer_list<std::wstring>& wavFiles, bool soft_fail = false, float freqStdDevFactor = 0.06f )
 		:
 		freqDist( 0.0f, freqStdDevFactor ),
@@ -57,7 +57,7 @@ class SoundEffect
 	{
 		sounds[ soundDist( rng ) ].Play( exp2( freqDist( rng ) ), vol );
 	}
-	private:
+private:
 	std::uniform_int_distribution<unsigned int> soundDist;
 	std::normal_distribution<float> freqDist;
 	std::vector<Sound> sounds;

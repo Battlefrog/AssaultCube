@@ -34,31 +34,31 @@ typedef tWAVEFORMATEX WAVEFORMATEX;
 
 class SoundSystem
 {
-	public:
+public:
 	class APIException : public ChiliException
 	{
-		public:
+	public:
 		APIException( HRESULT hr, const wchar_t * file, unsigned int line, const std::wstring& note );
 		std::wstring GetErrorName() const;
 		std::wstring GetErrorDescription() const;
 		virtual std::wstring GetFullMessage() const override;
 		virtual std::wstring GetExceptionType() const override;
-		private:
+	private:
 		HRESULT hr;
 	};
 	class FileException : public ChiliException
 	{
-		public:
+	public:
 		FileException( const wchar_t* file, unsigned int line, const std::wstring& note, const std::wstring& filename );
 		virtual std::wstring GetFullMessage() const override;
 		virtual std::wstring GetExceptionType() const override;
-		private:
+	private:
 		std::wstring filename;
 	};
-	private:
+private:
 	class XAudioDll
 	{
-		private:
+	private:
 		enum class LoadType
 		{
 			Folder,
@@ -66,50 +66,50 @@ class SoundSystem
 			System,
 			Invalid
 		};
-		public:
+	public:
 		XAudioDll();
 		~XAudioDll();
 		operator HMODULE() const;
-		private:
+	private:
 		static const wchar_t* GetDllPath( LoadType type );
-		private:
+	private:
 		HMODULE hModule = 0;
 		static constexpr wchar_t* systemPath = L"XAudio2_7.dll";
-		#ifdef _M_X64
+#ifdef _M_X64
 		static constexpr wchar_t* folderPath = L"XAudio\\XAudio2_7_64.dll";
 		static constexpr wchar_t* localPath = L"XAudio2_7_64.dll";
-		#else
+#else
 		static constexpr wchar_t* folderPath = L"XAudio\\XAudio2_7_32.dll";
 		static constexpr wchar_t* localPath = L"XAudio2_7_32.dll";
-		#endif
+#endif
 	};
-	public:
+public:
 	class Channel
 	{
 		friend class Sound;
-		public:
+	public:
 		Channel( SoundSystem& sys );
 		Channel( const Channel& ) = delete;
 		~Channel();
 		void PlaySoundBuffer( class Sound& s, float freqMod, float vol );
 		void Stop();
-		private:
+	private:
 		void RetargetSound( const Sound* pOld, Sound* pNew );
-		private:
+	private:
 		std::unique_ptr<struct XAUDIO2_BUFFER> xaBuffer;
 		struct IXAudio2SourceVoice* pSource = nullptr;
 		class Sound* pSound = nullptr;
 	};
-	public:
+public:
 	SoundSystem( const SoundSystem& ) = delete;
 	static SoundSystem& Get();
 	static void SetMasterVolume( float vol = 1.0f );
 	static const WAVEFORMATEX& GetFormat();
 	void PlaySoundBuffer( class Sound& s, float freqMod, float vol );
-	private:
+private:
 	SoundSystem();
 	void DeactivateChannel( Channel& channel );
-	private:
+private:
 	XAudioDll xaudio_dll;
 	Microsoft::WRL::ComPtr<struct IXAudio2> pEngine;
 	struct IXAudio2MasteringVoice* pMaster = nullptr;
@@ -117,7 +117,7 @@ class SoundSystem
 	std::mutex mutex;
 	std::vector<std::unique_ptr<Channel>> idleChannelPtrs;
 	std::vector<std::unique_ptr<Channel>> activeChannelPtrs;
-	private:
+private:
 	// change these values to match the format of the wav files you are loading
 	// all wav files must have the same format!! (no mixing and matching)
 	static constexpr WORD nChannelsPerSound = 2u;
@@ -132,7 +132,7 @@ class SoundSystem
 class Sound
 {
 	friend SoundSystem::Channel;
-	public:
+public:
 	enum class LoopType
 	{
 		NotLooping,
@@ -142,7 +142,7 @@ class Sound
 		ManualSample,
 		Invalid
 	};
-	public:
+public:
 	Sound() = default;
 	// for backwards compatibility--2nd parameter false -> NotLooping
 	Sound( const std::wstring& fileName, bool loopingWithAutoCueDetect );
@@ -156,11 +156,11 @@ class Sound
 	void StopOne();
 	void StopAll();
 	~Sound();
-	private:
+private:
 	Sound( const std::wstring& fileName, LoopType loopType,
 		   unsigned int loopStartSample, unsigned int loopEndSample,
 		   float loopStartSeconds, float loopEndSeconds );
-	private:
+private:
 	UINT32 nBytes = 0u;
 	bool looping = false;
 	unsigned int loopStart;

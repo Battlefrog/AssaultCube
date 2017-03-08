@@ -33,24 +33,21 @@
 
 class Game
 {
-	public:
+public:
+
 	Game( class MainWindow& wnd );
 	Game( const Game& ) = delete;
 	Game& operator=( const Game& ) = delete;
 	void Go();
-	private:
+
+private:
+
 	void ComposeFrame();
 	void UpdateModel();
-	/********************************/
-	/*  User Functions              */
-	/********************************/
-	private:
-	MainWindow& wnd;
-	Graphics gfx;
-	/********************************/
-	/*  User Variables              */
 
-	static constexpr int amountOfBlocks = 14;
+private:
+
+	static constexpr int amountOfBlocks = 15;
 	static constexpr int amountOfPoints = 1;
 
 	bool isPointCollected = false;
@@ -68,6 +65,9 @@ class Game
 	GameManager gameManager;
 
 	FrameTimer ft;
+
+	MainWindow& wnd;
+	Graphics gfx;
 
 	/********************************/
 };

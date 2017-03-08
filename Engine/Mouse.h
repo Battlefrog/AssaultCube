@@ -24,10 +24,10 @@
 class Mouse
 {
 	friend class MainWindow;
-	public:
+public:
 	class Event
 	{
-		public:
+	public:
 		enum Type
 		{
 			LPress,
@@ -39,13 +39,13 @@ class Mouse
 			Move,
 			Invalid
 		};
-		private:
+	private:
 		Type type;
 		bool leftIsPressed;
 		bool rightIsPressed;
 		int x;
 		int y;
-		public:
+	public:
 		Event()
 			:
 			type( Invalid ),
@@ -53,8 +53,7 @@ class Mouse
 			rightIsPressed( false ),
 			x( 0 ),
 			y( 0 )
-		{
-		}
+		{}
 		Event( Type type, const Mouse& parent )
 			:
 			type( type ),
@@ -62,8 +61,7 @@ class Mouse
 			rightIsPressed( parent.rightIsPressed ),
 			x( parent.x ),
 			y( parent.y )
-		{
-		}
+		{}
 		bool IsValid() const
 		{
 			return type != Invalid;
@@ -93,7 +91,7 @@ class Mouse
 			return rightIsPressed;
 		}
 	};
-	public:
+public:
 	Mouse() = default;
 	Mouse( const Mouse& ) = delete;
 	Mouse& operator=( const Mouse& ) = delete;
@@ -109,7 +107,7 @@ class Mouse
 		return buffer.empty();
 	}
 	void Flush();
-	private:
+private:
 	void OnMouseMove( int x, int y );
 	void OnMouseLeave();
 	void OnMouseEnter();
@@ -120,7 +118,7 @@ class Mouse
 	void OnWheelUp( int x, int y );
 	void OnWheelDown( int x, int y );
 	void TrimBuffer();
-	private:
+private:
 	static constexpr unsigned int bufferSize = 4u;
 	int x;
 	int y;

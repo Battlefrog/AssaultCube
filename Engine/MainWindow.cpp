@@ -34,8 +34,8 @@ MainWindow::MainWindow( HINSTANCE hInst, wchar_t * pArgs )
 	WNDCLASSEX wc = { sizeof( WNDCLASSEX ),CS_CLASSDC,_HandleMsgSetup,0,0,
 		hInst,nullptr,nullptr,nullptr,nullptr,
 		wndClassName,nullptr };
-	wc.hIconSm = ( HICON ) LoadImage( hInst, MAKEINTRESOURCE( IDI_APPICON ), IMAGE_ICON, 16, 16, 0 );
-	wc.hIcon = ( HICON ) LoadImage( hInst, MAKEINTRESOURCE( IDI_APPICON ), IMAGE_ICON, 32, 32, 0 );
+	wc.hIconSm = (HICON) LoadImage( hInst, MAKEINTRESOURCE( IDI_APPICON ), IMAGE_ICON, 16, 16, 0 );
+	wc.hIcon = (HICON) LoadImage( hInst, MAKEINTRESOURCE( IDI_APPICON ), IMAGE_ICON, 32, 32, 0 );
 	wc.hCursor = LoadCursor( nullptr, IDC_ARROW );
 	RegisterClassEx( &wc );
 
@@ -133,25 +133,25 @@ LRESULT MainWindow::HandleMsg( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 	switch ( msg )
 	{
 		case WM_DESTROY:
-			PostQuitMessage( 0 );
-			break;
+		PostQuitMessage( 0 );
+		break;
 
-			// ************ KEYBOARD MESSAGES ************ //
+		// ************ KEYBOARD MESSAGES ************ //
 		case WM_KEYDOWN:
-			if ( !( lParam & 0x40000000 ) || kbd.AutorepeatIsEnabled() ) // no thank you on the autorepeat
-			{
-				kbd.OnKeyPressed( static_cast<unsigned char>( wParam ) );
-			}
-			break;
+		if ( !( lParam & 0x40000000 ) || kbd.AutorepeatIsEnabled() ) // no thank you on the autorepeat
+		{
+			kbd.OnKeyPressed( static_cast<unsigned char>( wParam ) );
+		}
+		break;
 		case WM_KEYUP:
-			kbd.OnKeyReleased( static_cast<unsigned char>( wParam ) );
-			break;
+		kbd.OnKeyReleased( static_cast<unsigned char>( wParam ) );
+		break;
 		case WM_CHAR:
-			kbd.OnChar( static_cast<unsigned char>( wParam ) );
-			break;
-			// ************ END KEYBOARD MESSAGES ************ //
+		kbd.OnChar( static_cast<unsigned char>( wParam ) );
+		break;
+		// ************ END KEYBOARD MESSAGES ************ //
 
-			// ************ MOUSE MESSAGES ************ //
+		// ************ MOUSE MESSAGES ************ //
 		case WM_MOUSEMOVE:
 		{
 			POINTS pt = MAKEPOINTS( lParam );

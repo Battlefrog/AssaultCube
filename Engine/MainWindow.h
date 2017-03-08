@@ -30,21 +30,21 @@
 class HWNDKey
 {
 	friend Graphics::Graphics( HWNDKey& );
-	public:
+public:
 	HWNDKey( const HWNDKey& ) = delete;
 	HWNDKey& operator=( HWNDKey& ) = delete;
-	protected:
+protected:
 	HWNDKey() = default;
-	protected:
+protected:
 	HWND hWnd = nullptr;
 };
 
 class MainWindow : public HWNDKey
 {
-	public:
+public:
 	class Exception : public ChiliException
 	{
-		public:
+	public:
 		using ChiliException::ChiliException;
 		virtual std::wstring GetFullMessage() const override
 		{
@@ -55,7 +55,7 @@ class MainWindow : public HWNDKey
 			return L"Windows Exception";
 		}
 	};
-	public:
+public:
 	MainWindow( HINSTANCE hInst, wchar_t* pArgs );
 	MainWindow( const MainWindow& ) = delete;
 	MainWindow& operator=( const MainWindow& ) = delete;
@@ -73,14 +73,14 @@ class MainWindow : public HWNDKey
 	{
 		return args;
 	}
-	private:
+private:
 	static LRESULT WINAPI _HandleMsgSetup( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 	static LRESULT WINAPI _HandleMsgThunk( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 	LRESULT HandleMsg( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
-	public:
+public:
 	Keyboard kbd;
 	Mouse mouse;
-	private:
+private:
 	static constexpr wchar_t* wndClassName = L"Chili DirectX Framework Window";
 	HINSTANCE hInst = nullptr;
 	std::wstring args;

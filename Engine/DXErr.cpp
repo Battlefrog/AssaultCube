@@ -3008,7 +3008,7 @@ const WCHAR* WINAPI DXGetErrorStringW( _In_ HRESULT hr )
 			CHK_ERR_WIN32A( ERROR_IPSEC_IKE_NEGOTIATION_DISABLED )
 			CHK_ERR_WIN32A( ERROR_IPSEC_IKE_NEG_STATUS_END )
 
-			#if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
+#if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
 
 			// -------------------------------------------------------------
 			// ddraw.h error codes
@@ -3242,7 +3242,7 @@ const WCHAR* WINAPI DXGetErrorStringW( _In_ HRESULT hr )
 			CHK_ERRA( D3DERR_UNSUPPORTEDCRYPTO )
 			CHK_ERRA( D3DERR_PRESENT_STATISTICS_DISJOINT )
 
-			#endif // !WINAPI_FAMILY || WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP
+#endif // !WINAPI_FAMILY || WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP
 
 			// -------------------------------------------------------------
 			// d3d10.h error codes
@@ -3284,7 +3284,7 @@ const WCHAR* WINAPI DXGetErrorStringW( _In_ HRESULT hr )
 			CHK_ERRA( D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS )
 			CHK_ERRA( D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD )
 
-			#if !defined(WINAPI_FAMILY) || WINAPI_FAMILY != WINAPI_FAMILY_PHONE_APP
+#if !defined(WINAPI_FAMILY) || WINAPI_FAMILY != WINAPI_FAMILY_PHONE_APP
 
 			// -------------------------------------------------------------
 			// Direct2D error codes
@@ -3376,7 +3376,7 @@ const WCHAR* WINAPI DXGetErrorStringW( _In_ HRESULT hr )
 			CHK_ERRA( WINCODEC_ERR_WIN32ERROR )
 			CHK_ERRA( WINCODEC_ERR_INVALIDPROGRESSIVELEVEL )
 
-			#endif // !WINAPI_FAMILY || WINAPI_FAMILY != WINAPI_FAMILY_PHONE_APP
+#endif // !WINAPI_FAMILY || WINAPI_FAMILY != WINAPI_FAMILY_PHONE_APP
 
 			// -------------------------------------------------------------
 			// DXUT error codes
@@ -3446,7 +3446,7 @@ void WINAPI DXGetErrorDescriptionW( _In_ HRESULT hr, _Out_cap_( count ) WCHAR* d
 	{
 		// Commmented out codes are actually alises for other codes
 
-		#if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
+#if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
 
 		// -------------------------------------------------------------
 		// ddraw.h error codes
@@ -3681,7 +3681,7 @@ void WINAPI DXGetErrorDescriptionW( _In_ HRESULT hr, _Out_cap_( count ) WCHAR* d
 			CHK_ERR( D3DERR_PRESENT_STATISTICS_DISJOINT, "Presentation statistics are disjoint" )
 
 
-			#endif // !WINAPI_FAMILY || WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP
+#endif // !WINAPI_FAMILY || WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP
 
 			// -------------------------------------------------------------
 			// d3d10.h error codes
@@ -3723,7 +3723,7 @@ void WINAPI DXGetErrorDescriptionW( _In_ HRESULT hr, _Out_cap_( count ) WCHAR* d
 			CHK_ERR( D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS, "Therea are too many unique view objects." )
 			CHK_ERR( D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD, "Deferred context requires Map-Discard usage pattern" )
 
-			#if !defined(WINAPI_FAMILY) || WINAPI_FAMILY != WINAPI_FAMILY_PHONE_APP
+#if !defined(WINAPI_FAMILY) || WINAPI_FAMILY != WINAPI_FAMILY_PHONE_APP
 
 			// -------------------------------------------------------------
 			// Direct2D error codes
@@ -3815,7 +3815,7 @@ void WINAPI DXGetErrorDescriptionW( _In_ HRESULT hr, _Out_cap_( count ) WCHAR* d
 			CHK_ERR( WINCODEC_ERR_WIN32ERROR, "General Win32 error encountered during WIC operation." )
 			CHK_ERR( WINCODEC_ERR_INVALIDPROGRESSIVELEVEL, "Invalid level for progressive WIC image decode." )
 
-			#endif // !WINAPI_FAMILY || WINAPI_FAMILY != WINAPI_FAMILY_PHONE_APP
+#endif // !WINAPI_FAMILY || WINAPI_FAMILY != WINAPI_FAMILY_PHONE_APP
 
 			// -------------------------------------------------------------
 			// DXUT error codes
@@ -3876,7 +3876,7 @@ HRESULT WINAPI DXTraceW( _In_z_ const WCHAR* strFile, _In_ DWORD dwLine, _In_ HR
 
 	OutputDebugStringW( L"\n" );
 
-	#if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
+#if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
 	if ( bPopMsgBox )
 	{
 		WCHAR strBufferFile[ MAX_PATH ];
@@ -3896,9 +3896,9 @@ HRESULT WINAPI DXTraceW( _In_z_ const WCHAR* strFile, _In_ DWORD dwLine, _In_ HR
 		if ( nResult == IDYES )
 			DebugBreak();
 	}
-	#else
+#else
 	UNREFERENCED_PARAMETER( bPopMsgBox );
-	#endif
+#endif
 
 	return hr;
 }

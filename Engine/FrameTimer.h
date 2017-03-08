@@ -1,15 +1,23 @@
+/*
+AssaultCube
+Class: FrameTimer
+Purpose: DeltaTime and Frame-rate Idependence
+
+@author Battlefrog
+*/
+
 #pragma once
 #include <chrono> 
 
 class FrameTimer
 {
-	public:
+public:
 
 	FrameTimer();
 
 	float Mark();
 
-	private:
+private:
 
 	std::chrono::steady_clock::time_point last;
 };

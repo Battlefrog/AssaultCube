@@ -14,15 +14,15 @@ bool Point::IsCollidingWithPlayer( Player player )
 {
 	if ( !isCollected )
 	{
-		const int playerRight = player.GetX() + player.GetWidth();
-		const int playerBottom = player.GetY() + player.GetHeight();
+		const float playerRight = player.GetX() + player.GetWidth();
+		const float playerBottom = player.GetY() + player.GetHeight();
 		const int pointRight = x + width;
 		const int pointBottom = y + height;
 
 		if ( playerRight >= x &&
-			 player.GetX() <= pointRight &&
+			 player.GetX() <= float( pointRight ) &&
 			 playerBottom >= y &&
-			 player.GetY() <= pointBottom == true )
+			 player.GetY() <= float( pointBottom ) == true )
 		{
 			getPoint.Play();
 			isCollected = true;
