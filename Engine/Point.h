@@ -15,7 +15,7 @@ Purpose: The blocks that let you exit the level!
 class Point
 {
 
-	public:
+public:
 
 	const int GetX() const;
 	const int GetY() const;
@@ -27,7 +27,7 @@ class Point
 
 	bool isCollected = false;
 
-	private:
+private:
 
 	int x;
 	int y;

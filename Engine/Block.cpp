@@ -10,9 +10,9 @@ bool Block::IsCollidingWithPlayer( Player& player )
 	int blockBottom = CalculateHeight( height );
 
 	if ( playerRight >= boxX &&
-		 player.GetX() <= float(blockRight) &&
+		 player.GetX() <= float( blockRight ) &&
 		 playerBottom >= boxY &&
-		 player.GetY() <= float(blockBottom) == true )
+		 player.GetY() <= float( blockBottom ) == true )
 	{
 		PlaySound();
 		return true;

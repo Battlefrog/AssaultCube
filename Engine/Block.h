@@ -2,7 +2,7 @@
 AssaultCube
 Class: Blocks
 Purpose: The blocks that kill you when you touch
-			Normally they are 15 x 15
+Normally they are 15 x 15
 
 @author Battlefrog
 */
@@ -14,7 +14,7 @@ Purpose: The blocks that kill you when you touch
 
 class Block
 {
-	public:
+public:
 
 	bool IsCollidingWithPlayer( Player& player );
 
@@ -30,7 +30,7 @@ class Block
 	const int GetBlockWidth() const;
 	const int GetBlockHeight() const;
 
-	private:
+private:
 
 	int boxX;
 	int boxY;

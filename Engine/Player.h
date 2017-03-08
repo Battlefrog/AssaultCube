@@ -13,7 +13,7 @@ Purpose: The dude you move around!
 
 class Player
 {
-	public:
+public:
 
 	Player();
 
@@ -32,7 +32,7 @@ class Player
 	int playerSpeed = 60;
 	int numberOfTimesReset = 0;
 
-	private:
+private:
 
 	float x;
 	float y;

@@ -27,26 +27,26 @@
 
 class Graphics
 {
-	public:
+public:
 	class Exception : public ChiliException
 	{
-		public:
+	public:
 		Exception( HRESULT hr, const std::wstring& note, const wchar_t* file, unsigned int line );
 		std::wstring GetErrorName() const;
 		std::wstring GetErrorDescription() const;
 		virtual std::wstring GetFullMessage() const override;
 		virtual std::wstring GetExceptionType() const override;
-		private:
+	private:
 		HRESULT hr;
 	};
-	private:
+private:
 	// vertex format for the framebuffer fullscreen textured quad
 	struct FSQVertex
 	{
 		float x, y, z;		// position
 		float u, v;			// texcoords
 	};
-	public:
+public:
 	Graphics( class HWNDKey& key );
 	Graphics( const Graphics& ) = delete;
 	Graphics& operator=( const Graphics& ) = delete;
@@ -76,7 +76,7 @@ class Graphics
 		DrawRect( x0, y0, x0 + width, y0 + height, c );
 	}
 	~Graphics();
-	private:
+private:
 	Microsoft::WRL::ComPtr<IDXGISwapChain>				pSwapChain;
 	Microsoft::WRL::ComPtr<ID3D11Device>				pDevice;
 	Microsoft::WRL::ComPtr<ID3D11DeviceContext>			pImmediateContext;
@@ -90,7 +90,7 @@ class Graphics
 	Microsoft::WRL::ComPtr<ID3D11SamplerState>			pSamplerState;
 	D3D11_MAPPED_SUBRESOURCE							mappedSysBufferTexture;
 	Color*                                              pSysBuffer = nullptr;
-	public:
+public:
 	static constexpr int ScreenWidth = 800;
 	static constexpr int ScreenHeight = 600;
 };

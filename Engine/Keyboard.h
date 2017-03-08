@@ -25,32 +25,30 @@
 class Keyboard
 {
 	friend class MainWindow;
-	public:
+public:
 	class Event
 	{
-		public:
+	public:
 		enum Type
 		{
 			Press,
 			Release,
 			Invalid
 		};
-		private:
+	private:
 		Type type;
 		unsigned char code;
-		public:
+	public:
 		Event()
 			:
 			type( Invalid ),
 			code( 0u )
-		{
-		}
+		{}
 		Event( Type type, unsigned char code )
 			:
 			type( type ),
 			code( code )
-		{
-		}
+		{}
 		bool IsPress() const
 		{
 			return type == Press;
@@ -68,7 +66,7 @@ class Keyboard
 			return code;
 		}
 	};
-	public:
+public:
 	Keyboard() = default;
 	Keyboard( const Keyboard& ) = delete;
 	Keyboard& operator=( const Keyboard& ) = delete;
@@ -83,13 +81,13 @@ class Keyboard
 	void EnableAutorepeat();
 	void DisableAutorepeat();
 	bool AutorepeatIsEnabled() const;
-	private:
+private:
 	void OnKeyPressed( unsigned char keycode );
 	void OnKeyReleased( unsigned char keycode );
 	void OnChar( char character );
 	template<typename T>
 	void TrimBuffer( std::queue<T>& buffer );
-	private:
+private:
 	static constexpr unsigned int nKeys = 256u;
 	static constexpr unsigned int bufferSize = 4u;
 	bool autorepeatEnabled = false;

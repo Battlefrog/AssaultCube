@@ -18,9 +18,9 @@ bool Goal::IsPlayerColliding( Player player )
 	const int goalBottom = y + height;
 
 	if ( playerRight >= x &&
-		 player.GetX() <= float(goalRight) &&
+		 player.GetX() <= float( goalRight ) &&
 		 playerBottom >= y &&
-		 player.GetY() <= float(goalBottom) == true )
+		 player.GetY() <= float( goalBottom ) == true )
 	{
 		return true;
 	}
@@ -42,7 +42,7 @@ void Goal::InitGoal( int in_x, int in_y )
 }
 
 // TODO: Move onto the next level, perhaps?
-bool Goal::PlayerCollision(MainWindow& wnd)
+bool Goal::PlayerCollision( MainWindow& wnd )
 {
 	levelEnd.Play();
 	wnd.Kill();

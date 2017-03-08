@@ -99,7 +99,7 @@ void Game::UpdateModel()
 	{
 		if ( goal.IsPlayerColliding( player ) )
 		{
-			goal.PlayerCollision(wnd);
+			goal.PlayerCollision( wnd );
 		}
 	}
 

@@ -76,24 +76,24 @@ SoundSystem::XAudioDll::XAudioDll()
 			switch ( type )
 			{
 				case LoadType::System:
-					type = LoadType::Folder;
-					break;
+				type = LoadType::Folder;
+				break;
 				case LoadType::Folder:
-					type = LoadType::Local;
-					break;
+				type = LoadType::Local;
+				break;
 				case LoadType::Local:
-					throw CHILI_SOUND_API_EXCEPTION(
-						HRESULT_FROM_WIN32( GetLastError() ),
-						std::wstring(
+				throw CHILI_SOUND_API_EXCEPTION(
+					HRESULT_FROM_WIN32( GetLastError() ),
+					std::wstring(
 						L"The XAudio2 DLL Could not be loaded. It is required that:\n"
 						L"A) [ " ) + std::wstring( GetDllPath( LoadType::Folder ) ) +
-						std::wstring( L" ] exist in the same folder as this executable;\n"
-						L"B) [ " ) + std::wstring( GetDllPath( LoadType::Local ) ) +
-						std::wstring( L" ] exist in the same folder as this executable; or\n"
-						L"C) [ XAudio2_7.dll ] be installed on this system via the DirectX"
-						L" Redistributable Installer Version June 2010\n" ) );
+					std::wstring( L" ] exist in the same folder as this executable;\n"
+								  L"B) [ " ) + std::wstring( GetDllPath( LoadType::Local ) ) +
+					std::wstring( L" ] exist in the same folder as this executable; or\n"
+								  L"C) [ XAudio2_7.dll ] be installed on this system via the DirectX"
+								  L" Redistributable Installer Version June 2010\n" ) );
 				default:
-					assert( false && "Bad LoadType encountered in XAudio Dll loading sequence loop" );
+				assert( false && "Bad LoadType encountered in XAudio Dll loading sequence loop" );
 			}
 		}
 	}
@@ -118,14 +118,14 @@ const wchar_t* SoundSystem::XAudioDll::GetDllPath( LoadType type )
 	switch ( type )
 	{
 		case LoadType::System:
-			return systemPath;
+		return systemPath;
 		case LoadType::Folder:
-			return folderPath;
+		return folderPath;
 		case LoadType::Local:
-			return localPath;
+		return localPath;
 		default:
-			assert( false && "Bad LoadType in GetDllPath function" );
-			return nullptr;
+		assert( false && "Bad LoadType in GetDllPath function" );
+		return nullptr;
 	}
 }
 
@@ -151,7 +151,7 @@ SoundSystem::SoundSystem()
 	// find address of DllGetClassObject() function in the dll
 	const std::function<HRESULT( REFCLSID, REFIID, LPVOID )> DllGetClassObject =
 		reinterpret_cast<HRESULT( WINAPI* )( REFCLSID, REFIID, LPVOID )>(
-		GetProcAddress( xaudio_dll, "DllGetClassObject" ) );
+			GetProcAddress( xaudio_dll, "DllGetClassObject" ) );
 	if ( !DllGetClassObject )
 	{
 		throw CHILI_SOUND_API_EXCEPTION(
@@ -172,7 +172,7 @@ SoundSystem::SoundSystem()
 
 	// create the XAudio2 component object itself
 	if ( FAILED( hr = pClassFactory->CreateInstance( nullptr,
-		 __uuidof( IXAudio2 ), &pEngine ) ) )
+													 __uuidof( IXAudio2 ), &pEngine ) ) )
 	{
 		throw CHILI_SOUND_API_EXCEPTION( hr, L"Creating XAudio2 object" );
 	}
@@ -200,7 +200,7 @@ void SoundSystem::DeactivateChannel( Channel & channel )
 {
 	std::lock_guard<std::mutex> lock( mutex );
 	auto i = std::find_if( activeChannelPtrs.begin(), activeChannelPtrs.end(),
-						   [ &channel ] ( const std::unique_ptr<Channel>& pChan ) -> bool
+						   [&channel] ( const std::unique_ptr<Channel>& pChan ) -> bool
 	{
 		return &channel == pChan.get();
 	} );
@@ -214,16 +214,13 @@ SoundSystem::Channel::Channel( SoundSystem & sys )
 {
 	class VoiceCallback : public IXAudio2VoiceCallback
 	{
-		public:
+	public:
 		void STDMETHODCALLTYPE OnStreamEnd() override
-		{
-		}
+		{}
 		void STDMETHODCALLTYPE OnVoiceProcessingPassEnd() override
-		{
-		}
+		{}
 		void STDMETHODCALLTYPE OnVoiceProcessingPassStart( UINT32 SamplesRequired ) override
-		{
-		}
+		{}
 		void STDMETHODCALLTYPE OnBufferEnd( void* pBufferContext ) override
 		{
 			Channel& chan = *reinterpret_cast<Channel*>( pBufferContext );
@@ -240,14 +237,11 @@ SoundSystem::Channel::Channel( SoundSystem & sys )
 			SoundSystem::Get().DeactivateChannel( chan );
 		}
 		void STDMETHODCALLTYPE OnBufferStart( void* pBufferContext ) override
-		{
-		}
+		{}
 		void STDMETHODCALLTYPE OnLoopEnd( void* pBufferContext ) override
-		{
-		}
+		{}
 		void STDMETHODCALLTYPE OnVoiceError( void* pBufferContext, HRESULT Error ) override
-		{
-		}
+		{}
 	};
 	static VoiceCallback vcb;
 	ZeroMemory( xaBuffer.get(), sizeof( *xaBuffer ) );
@@ -326,26 +320,22 @@ Sound::Sound( const std::wstring& fileName, bool loopingWithAutoCueDetect )
 	:
 	Sound( fileName, loopingWithAutoCueDetect ?
 		   LoopType::AutoEmbeddedCuePoints : LoopType::NotLooping )
-{
-}
+{}
 
 Sound::Sound( const std::wstring& fileName, LoopType loopType )
 	:
 	Sound( fileName, loopType, nullSample, nullSample, nullSeconds, nullSeconds )
-{
-}
+{}
 
 Sound::Sound( const std::wstring& fileName, unsigned int loopStart, unsigned int loopEnd )
 	:
 	Sound( fileName, LoopType::ManualSample, loopStart, loopEnd, nullSeconds, nullSeconds )
-{
-}
+{}
 
 Sound::Sound( const std::wstring& fileName, float loopStart, float loopEnd )
 	:
 	Sound( fileName, LoopType::ManualFloat, nullSample, nullSample, loopStart, loopEnd )
-{
-}
+{}
 
 Sound::Sound( const std::wstring& fileName, LoopType loopType,
 			  unsigned int loopStartSample, unsigned int loopEndSample,
@@ -573,10 +563,10 @@ Sound::Sound( const std::wstring& fileName, LoopType loopType,
 			}
 			break;
 			case LoopType::NotLooping:
-				break;
+			break;
 			default:
-				assert( "Bad LoopType encountered!" && false );
-				break;
+			assert( "Bad LoopType encountered!" && false );
+			break;
 		}
 	}
 	catch ( const SoundSystem::FileException& e )
@@ -627,7 +617,7 @@ Sound& Sound::operator=( Sound && donor )
 			pChannel->Stop();
 		}
 		// wait for those channels to actually stop playing our jam
-		cvDeath.wait( lock, [ this ]
+		cvDeath.wait( lock, [this]
 		{
 			return activeChannelPtrs.size() == 0u;
 		} );
@@ -690,7 +680,7 @@ Sound::~Sound()
 	}
 
 	// wait for those channels to actually stop playing our jam
-	cvDeath.wait( lock, [ this ]
+	cvDeath.wait( lock, [this]
 	{
 		return activeChannelPtrs.size() == 0u;
 	} );
@@ -700,8 +690,7 @@ SoundSystem::APIException::APIException( HRESULT hr, const wchar_t * file, unsig
 	:
 	hr( hr ),
 	ChiliException( file, line, note )
-{
-}
+{}
 
 std::wstring SoundSystem::APIException::GetFullMessage() const
 {
@@ -732,8 +721,7 @@ SoundSystem::FileException::FileException( const wchar_t* file, unsigned int lin
 	:
 	ChiliException( file, line, note ),
 	filename( filename )
-{
-}
+{}
 
 std::wstring SoundSystem::FileException::GetFullMessage() const
 {

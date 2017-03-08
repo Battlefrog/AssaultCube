@@ -20,9 +20,9 @@ bool Point::IsCollidingWithPlayer( Player player )
 		const int pointBottom = y + height;
 
 		if ( playerRight >= x &&
-			 player.GetX() <= float(pointRight) &&
+			 player.GetX() <= float( pointRight ) &&
 			 playerBottom >= y &&
-			 player.GetY() <= float(pointBottom) == true )
+			 player.GetY() <= float( pointBottom ) == true )
 		{
 			getPoint.Play();
 			isCollected = true;

@@ -2,25 +2,25 @@
 
 void Player::IsOutsideBoundries()
 {
-	const float right = x + float(width);
-	const float bottom = y + float(height);
+	const float right = x + float( width );
+	const float bottom = y + float( height );
 
 	if ( x < 0 )
 	{
 		x = 0;
 	}
-	else if ( right >= float(Graphics::ScreenWidth) )
+	else if ( right >= float( Graphics::ScreenWidth ) )
 	{
-		x = float( Graphics::ScreenWidth - 1 ) - float(width);
+		x = float( Graphics::ScreenWidth - 1 ) - float( width );
 	}
 
 	if ( y < 0 )
 	{
 		y = 0;
 	}
-	else if ( bottom >= float(Graphics::ScreenHeight) )
+	else if ( bottom >= float( Graphics::ScreenHeight ) )
 	{
-		y = float( Graphics::ScreenHeight - 1 ) - float(height);
+		y = float( Graphics::ScreenHeight - 1 ) - float( height );
 	}
 }
 
@@ -84,5 +84,5 @@ void Player::UpdateInput( const Keyboard& kbd, float dt )
 
 void Player::DrawPlayer( Graphics & gfx ) const
 {
-	gfx.DrawRectDim( int(x), int(y), width, height, playerColor );
+	gfx.DrawRectDim( int( x ), int( y ), width, height, playerColor );
 }

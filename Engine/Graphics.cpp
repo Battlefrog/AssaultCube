@@ -30,8 +30,8 @@
 // They will be created during the build sequence before the preprocessor runs.
 namespace FramebufferShaders
 {
-	#include "FramebufferPS.shh"
-	#include "FramebufferVS.shh"
+#include "FramebufferPS.shh"
+#include "FramebufferVS.shh"
 }
 
 #pragma comment( lib,"d3d11.lib" )
@@ -61,11 +61,11 @@ Graphics::Graphics( HWNDKey& key )
 
 	HRESULT				hr;
 	UINT				createFlags = 0u;
-	#ifdef CHILI_USE_D3D_DEBUG_LAYER
-	#ifdef _DEBUG
+#ifdef CHILI_USE_D3D_DEBUG_LAYER
+#ifdef _DEBUG
 	createFlags |= D3D11_CREATE_DEVICE_DEBUG;
-	#endif
-	#endif
+#endif
+#endif
 
 	// create device and front/back buffers
 	if ( FAILED( hr = D3D11CreateDeviceAndSwapChain(
@@ -90,7 +90,7 @@ Graphics::Graphics( HWNDKey& key )
 	if ( FAILED( hr = pSwapChain->GetBuffer(
 		0,
 		__uuidof( ID3D11Texture2D ),
-		( LPVOID* ) &pBackBuffer ) ) )
+		(LPVOID*) &pBackBuffer ) ) )
 	{
 		throw CHILI_GFX_EXCEPTION( hr, L"Getting back buffer" );
 	}
@@ -146,7 +146,7 @@ Graphics::Graphics( HWNDKey& key )
 	srvDesc.Texture2D.MipLevels = 1;
 	// create the resource view on the texture
 	if ( FAILED( hr = pDevice->CreateShaderResourceView( pSysBufferTexture.Get(),
-		 &srvDesc, &pSysBufferTextureView ) ) )
+														 &srvDesc, &pSysBufferTextureView ) ) )
 	{
 		throw CHILI_GFX_EXCEPTION( hr, L"Creating view on sysBuffer texture" );
 	}
@@ -212,9 +212,9 @@ Graphics::Graphics( HWNDKey& key )
 
 	// Ignore the intellisense error "namespace has no member"
 	if ( FAILED( hr = pDevice->CreateInputLayout( ied, 2,
-		 FramebufferShaders::FramebufferVSBytecode,
-		 sizeof( FramebufferShaders::FramebufferVSBytecode ),
-		 &pInputLayout ) ) )
+												  FramebufferShaders::FramebufferVSBytecode,
+												  sizeof( FramebufferShaders::FramebufferVSBytecode ),
+												  &pInputLayout ) ) )
 	{
 		throw CHILI_GFX_EXCEPTION( hr, L"Creating input layout" );
 	}
@@ -258,7 +258,7 @@ void Graphics::EndFrame()
 
 	// lock and map the adapter memory for copying over the sysbuffer
 	if ( FAILED( hr = pImmediateContext->Map( pSysBufferTexture.Get(), 0u,
-		 D3D11_MAP_WRITE_DISCARD, 0u, &mappedSysBufferTexture ) ) )
+											  D3D11_MAP_WRITE_DISCARD, 0u, &mappedSysBufferTexture ) ) )
 	{
 		throw CHILI_GFX_EXCEPTION( hr, L"Mapping sysbuffer" );
 	}
@@ -345,8 +345,7 @@ Graphics::Exception::Exception( HRESULT hr, const std::wstring& note, const wcha
 	:
 	ChiliException( file, line, note ),
 	hr( hr )
-{
-}
+{}
 
 std::wstring Graphics::Exception::GetFullMessage() const
 {

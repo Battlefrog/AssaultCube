@@ -11,13 +11,13 @@ Purpose: DeltaTime and Frame-rate Idependence
 
 class FrameTimer
 {
-	public:
+public:
 
 	FrameTimer();
 
 	float Mark();
 
-	private:
+private:
 
 	std::chrono::steady_clock::time_point last;
 };

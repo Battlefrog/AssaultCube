@@ -17,18 +17,18 @@ Purpose: Where you move to the next level!
 class Goal
 {
 
-	public:
+public:
 
 	const int GetX() const;
 	const int GetY() const;
 
 	bool IsPlayerColliding( Player player );
-	bool PlayerCollision(MainWindow& wnd);
-	
+	bool PlayerCollision( MainWindow& wnd );
+
 	void DrawGoal( Graphics& gfx ) const;
 	void InitGoal( int in_x, int in_y );
 
-	private:
+private:
 
 	int x;
 	int y;
