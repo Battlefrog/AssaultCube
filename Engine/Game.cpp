@@ -30,7 +30,7 @@ Game::Game( MainWindow& wnd )
 	/* LEVEL 1 */
 
 	/* Goals */
-	goal.InitGoal( 650, 300 );
+	goal.InitGoal( 300, 255 );
 
 	/* Blocks */
 
@@ -41,7 +41,7 @@ Game::Game( MainWindow& wnd )
 	blocks[ 3 ].InitBlock( 770, 30, 15, 550 );
 
 	// 1st Challenge
-	blocks[ 4 ].InitBlock( 155, 30, 15, 300 );
+	blocks[ 4 ].InitBlock( 155, 30, 75, 300 );
 	blocks[ 5 ].InitBlock( 20, 375, 200, 15 );
 	blocks[ 6 ].InitBlock( 20, 150, 75, 15 );
 	blocks[ 7 ].InitBlock( 260, 240, 15, 60 );
@@ -54,6 +54,7 @@ Game::Game( MainWindow& wnd )
 	blocks[ 12 ].InitBlock( 275, 285, 100, 15 );
 	blocks[ 13 ].InitBlock( 300, 300, 50, 50 );
 	blocks[ 14 ].InitBlock( 570, 350, 200, 15 );
+	blocks[ 15 ].InitBlock( 460, 100, 45, 280 );
 
 	/* Points */
 
@@ -69,8 +70,7 @@ void Game::Go()
 }
 
 void Game::UpdateModel()
-{
-
+{ 
 	float dt = ft.Mark();
 
 	for ( int i = 0; i <= amountOfBlocks; ++i )

@@ -19,7 +19,6 @@ public:
 
 	const int GetX() const;
 	const int GetY() const;
-
 	bool IsCollidingWithPlayer( Player player );
 
 	void DrawPoint( Graphics& gfx );
