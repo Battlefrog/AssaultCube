@@ -47,7 +47,7 @@ private:
 
 private:
 
-	static constexpr int amountOfBlocks = 15;
+	static constexpr int amountOfBlocks = 16;
 	static constexpr int amountOfPoints = 1;
 
 	bool isPointCollected = false;
