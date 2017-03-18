@@ -26,7 +26,6 @@ Game::Game( MainWindow& wnd )
 	wnd( wnd ),
 	gfx( wnd )
 {
-
 	/* LEVEL 1 */
 
 	/* Goals */
@@ -73,37 +72,47 @@ void Game::UpdateModel()
 { 
 	float dt = ft.Mark();
 
-	for ( int i = 0; i <= amountOfBlocks; ++i )
+	if ( ActiveTitleScreen == false )
 	{
-		if ( !blocks[ i ].IsCollidingWithPlayer( player ) )
+		for ( int i = 0; i <= amountOfBlocks; ++i )
 		{
-			player.UpdateInput( wnd.kbd, dt );
-			player.IsOutsideBoundries();
+			if ( !blocks[ i ].IsCollidingWithPlayer( player ) )
+			{
+				player.UpdateInput( wnd.kbd, dt );
+				player.IsOutsideBoundries();
+			}
+			else
+			{
+				player.ResetPlayer();
+				player.SetTimesReset( player.numberOfTimesReset++ );
+			}
 		}
-		else
+
+		for ( int i = 0; i <= amountOfPoints; ++i )
 		{
-			player.ResetPlayer();
-			player.SetTimesReset( player.numberOfTimesReset++ );
+			if ( points[ i ].IsCollidingWithPlayer( player ) )
+			{
+				isPointCollected = true;
+			}
+		}
+
+		if ( isPointCollected == true )
+		{
+			if ( goal.IsPlayerColliding( player ) )
+			{
+				goal.PlayerCollision( wnd );
+			}
+		}
+
+		gameManager.HandleCommonInputs( wnd.kbd, wnd, player );
+	}
+	else
+	{
+		if ( wnd.kbd.KeyIsPressed( VK_SPACE ) )
+		{
+			ActiveTitleScreen = false;
 		}
 	}
-
-	for ( int i = 0; i <= amountOfPoints; ++i )
-	{
-		if ( points[ i ].IsCollidingWithPlayer( player ) )
-		{
-			isPointCollected = true;
-		}
-	}
-
-	if ( isPointCollected == true )
-	{
-		if ( goal.IsPlayerColliding( player ) )
-		{
-			goal.PlayerCollision( wnd );
-		}
-	}
-
-	gameManager.HandleCommonInputs( wnd.kbd, wnd, player );
 }
 
 void Game::ComposeFrame()

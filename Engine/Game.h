@@ -51,7 +51,7 @@ private:
 	static constexpr int amountOfPoints = 1;
 
 	bool isPointCollected = false;
-	bool ActiveTitleScreen = false;
+	bool ActiveTitleScreen = true;
 
 	Player player;
 
