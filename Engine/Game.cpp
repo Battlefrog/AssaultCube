@@ -50,10 +50,12 @@ Game::Game( MainWindow& wnd )
 	blocks[ 9 ].InitBlock( 300, 300, 15, 45 );
 	blocks[ 10 ].InitBlock( 600, 360, 15, 75 );
 	blocks[ 11 ].InitBlock( 600, 490, 15, 75 );
-	blocks[ 12 ].InitBlock( 275, 285, 100, 15 );
+	blocks[ 12 ].InitBlock( 275, 285, 185, 15 );
 	blocks[ 13 ].InitBlock( 300, 300, 50, 50 );
 	blocks[ 14 ].InitBlock( 570, 350, 200, 15 );
-	blocks[ 15 ].InitBlock( 460, 100, 45, 280 );
+	blocks[ 15 ].InitBlock( 460, 100, 45, 250 );
+	blocks[ 16 ].InitBlock( 500, 125, 205, 15 );
+	blocks[ 17 ].InitBlock( 125, 450, 300, 50 );
 
 	/* Points */
 
