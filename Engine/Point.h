@@ -23,6 +23,7 @@ public:
 
 	void DrawPoint( Graphics& gfx );
 	void InitPoint( int in_x, int in_y );
+	void SetRespawnOfPlayer(Player& player);
 
 	bool isCollected = false;
 

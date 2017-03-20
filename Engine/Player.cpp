@@ -27,8 +27,8 @@ void Player::IsOutsideBoundries()
 void Player::ResetPlayer()
 {
 	// TODO: This will not work for long... better maintain it
-	x = startingX;
-	y = startingY;
+	x = respawnX;
+	y = respawnY;
 }
 
 Player::Player()
@@ -45,6 +45,28 @@ const float Player::GetX() const
 const float Player::GetY() const
 {
 	return y;
+}
+
+const float Player::GetRespawnX() const
+{
+	return respawnX;
+}
+
+const float Player::GetRespawnY() const
+{
+	return respawnY;
+}
+
+float Player::SetRespawnX( int newRespawnX )
+{
+	respawnX = newRespawnX;
+	return respawnX;
+}
+
+float Player::SetRespawnY( int newRespawnY )
+{
+	respawnY = newRespawnY;
+	return respawnY;
 }
 
 int Player::GetWidth() const
