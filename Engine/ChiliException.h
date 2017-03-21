@@ -24,7 +24,7 @@
 class ChiliException
 {
 public:
-	ChiliException( const wchar_t* file, unsigned int line, const std::wstring& note = L"" )
+	ChiliException( const wchar_t* file,unsigned int line,const std::wstring& note = L"" )
 		:
 		note( note ),
 		file( file ),

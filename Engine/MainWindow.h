@@ -46,23 +46,17 @@ public:
 	{
 	public:
 		using ChiliException::ChiliException;
-		virtual std::wstring GetFullMessage() const override
-		{
-			return GetNote() + L"\nAt: " + GetLocation();
-		}
-		virtual std::wstring GetExceptionType() const override
-		{
-			return L"Windows Exception";
-		}
+		virtual std::wstring GetFullMessage() const override { return GetNote() + L"\nAt: " + GetLocation(); }
+		virtual std::wstring GetExceptionType() const override { return L"Windows Exception"; }
 	};
 public:
-	MainWindow( HINSTANCE hInst, wchar_t* pArgs );
+	MainWindow( HINSTANCE hInst,wchar_t* pArgs );
 	MainWindow( const MainWindow& ) = delete;
 	MainWindow& operator=( const MainWindow& ) = delete;
 	~MainWindow();
 	bool IsActive() const;
 	bool IsMinimized() const;
-	void ShowMessageBox( const std::wstring& title, const std::wstring& message ) const;
+	void ShowMessageBox( const std::wstring& title,const std::wstring& message ) const;
 	void Kill()
 	{
 		PostQuitMessage( 0 );
@@ -74,9 +68,9 @@ public:
 		return args;
 	}
 private:
-	static LRESULT WINAPI _HandleMsgSetup( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
-	static LRESULT WINAPI _HandleMsgThunk( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
-	LRESULT HandleMsg( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
+	static LRESULT WINAPI _HandleMsgSetup( HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam );
+	static LRESULT WINAPI _HandleMsgThunk( HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam );
+	LRESULT HandleMsg( HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam );
 public:
 	Keyboard kbd;
 	Mouse mouse;

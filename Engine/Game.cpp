@@ -31,8 +31,6 @@ Game::Game( MainWindow& wnd )
 	/* Goals */
 	goal.InitGoal( 300, 255 );
 
-	/* Blocks */
-
 	// Level Border
 	blocks[ 0 ].InitBlock( 20, 30, 750, 15 );
 	blocks[ 1 ].InitBlock( 20, 30, 15, 550 );
@@ -57,7 +55,6 @@ Game::Game( MainWindow& wnd )
 	blocks[ 16 ].InitBlock( 500, 125, 205, 15 );
 	blocks[ 17 ].InitBlock( 125, 450, 300, 50 );
 
-	/* Points */
 
 	points[ 0 ].InitPoint( 700, 440 );
 }
