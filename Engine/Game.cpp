@@ -104,6 +104,7 @@ void Game::UpdateModel()
 		}
 
 		gameManager.HandleCommonInputs( wnd.kbd, wnd, player );
+		// TODO: Mutes all other sounds. Need fixing.
 		gameManager.PlayBackgroundMusic();
 	}
 	else
