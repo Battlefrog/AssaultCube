@@ -78,7 +78,7 @@
     <ClInclude Include="FrameTimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Broc\Desktop\chili_framework-master\Engine\COMInitializer.h">
+    <ClInclude Include="COMInitializer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -125,7 +125,7 @@
     <ClCompile Include="FrameTimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Broc\Desktop\chili_framework-master\Engine\COMInitializer.cpp">
+    <ClCompile Include="COMInitializer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
