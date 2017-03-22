@@ -22,4 +22,8 @@ public:
 	void DrawTitleScreen( Graphics& gfx, int x, int y );
 	void PlayBackgroundMusic();
 
+private:
+
+	Sound backgroundMusic = L"backgroundMusic.mp3";
+
 };

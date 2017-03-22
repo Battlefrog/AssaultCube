@@ -2107,5 +2107,7 @@ void GameManager::DrawTitleScreen( Graphics & gfx, int x, int y )
 }
 
 void GameManager::PlayBackgroundMusic()
-{}
+{
+	backgroundMusic.Play();
+}
 
