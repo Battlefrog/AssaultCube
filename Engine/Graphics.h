@@ -31,7 +31,7 @@ public:
 	class Exception : public ChiliException
 	{
 	public:
-		Exception( HRESULT hr, const std::wstring& note, const wchar_t* file, unsigned int line );
+		Exception( HRESULT hr,const std::wstring& note,const wchar_t* file,unsigned int line );
 		std::wstring GetErrorName() const;
 		std::wstring GetErrorDescription() const;
 		virtual std::wstring GetFullMessage() const override;
@@ -43,8 +43,8 @@ private:
 	// vertex format for the framebuffer fullscreen textured quad
 	struct FSQVertex
 	{
-		float x, y, z;		// position
-		float u, v;			// texcoords
+		float x,y,z;		// position
+		float u,v;			// texcoords
 	};
 public:
 	Graphics( class HWNDKey& key );
@@ -52,25 +52,12 @@ public:
 	Graphics& operator=( const Graphics& ) = delete;
 	void EndFrame();
 	void BeginFrame();
-	void PutPixel( int x, int y, int r, int g, int b )
+	void PutPixel( int x,int y,int r,int g,int b )
 	{
-		PutPixel( x, y, { unsigned char( r ),unsigned char( g ),unsigned char( b ) } );
+		PutPixel( x,y,{ unsigned char( r ),unsigned char( g ),unsigned char( b ) } );
 	}
-	// 1st - X Pos of object
-	// 2nd - Y Pos of object
-	// 3rd - Color of object
-	void PutPixel( int x, int y, Color c );
-	// 1st - X Pos of object
-	// 2nd - Y Pos of object
-	// 3rd - Width of object
-	// 4th - Height of object
-	// 5th - Color of object
+	void PutPixel( int x,int y,Color c );
 	void DrawRect( int x0, int y0, int x1, int y1, Color c );
-	// 1st - X Pos of object
-	// 2nd - Y Pos of object
-	// 3rd - Width of object
-	// 4th - Height of object
-	// 5th - Color of object
 	void DrawRectDim( int x0, int y0, int width, int height, Color c )
 	{
 		DrawRect( x0, y0, x0 + width, y0 + height, c );

@@ -21,4 +21,5 @@ public:
 	void HandleCommonInputs( const Keyboard& kbd, MainWindow& wnd, Player& player );
 	void DrawTitleScreen( Graphics& gfx, int x, int y );
 	void PlayBackgroundMusic();
+
 };

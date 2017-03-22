@@ -20,6 +20,12 @@ public:
 	const float GetX() const;
 	const float GetY() const;
 
+	const float GetRespawnX() const;
+	const float GetRespawnY() const;
+
+	float SetRespawnX(int newRespawnX);
+	float SetRespawnY(int newRespawnY);
+
 	int GetWidth() const;
 	int GetHeight() const;
 	int SetTimesReset( int newValue );
@@ -39,6 +45,8 @@ private:
 
 	float startingX = 50.0f;
 	float startingY = 75.0f;
+	float respawnX = startingX;
+	float respawnY = startingY;
 
 	static constexpr int width = 15;
 	static constexpr int height = 15;

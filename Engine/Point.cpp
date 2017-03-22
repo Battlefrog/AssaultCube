@@ -25,6 +25,8 @@ bool Point::IsCollidingWithPlayer( Player player )
 			 player.GetY() <= float( pointBottom ) == true )
 		{
 			getPoint.Play();
+			player.SetRespawnX( x );
+			player.SetRespawnY( y );
 			isCollected = true;
 			return true;
 		}
