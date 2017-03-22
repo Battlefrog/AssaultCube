@@ -104,6 +104,7 @@ void Game::UpdateModel()
 		}
 
 		gameManager.HandleCommonInputs( wnd.kbd, wnd, player );
+		gameManager.PlayBackgroundMusic();
 	}
 	else
 	{

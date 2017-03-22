@@ -18,12 +18,14 @@ class GameManager
 {
 public:
 
+	GameManager();
+
 	void HandleCommonInputs( const Keyboard& kbd, MainWindow& wnd, Player& player );
 	void DrawTitleScreen( Graphics& gfx, int x, int y );
 	void PlayBackgroundMusic();
 
 private:
 
-	Sound backgroundMusic = L"backgroundMusic.mp3";
+	Sound backgroundMusic;
 
 };

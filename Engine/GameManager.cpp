@@ -1,5 +1,10 @@
 #include "GameManager.h"
 
+GameManager::GameManager()
+	:
+	backgroundMusic( L"backgroundMusic.mp3", 0.0f, 49.0f )
+{}
+
 void GameManager::HandleCommonInputs( const Keyboard& kbd, MainWindow& wnd, Player& player )
 {
 	if ( kbd.KeyIsPressed( 'R' ) )
