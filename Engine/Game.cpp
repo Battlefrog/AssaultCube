@@ -55,7 +55,6 @@ Game::Game( MainWindow& wnd )
 	blocks[ 16 ].InitBlock( 500, 125, 205, 15 );
 	blocks[ 17 ].InitBlock( 125, 450, 300, 50 );
 
-
 	points[ 0 ].InitPoint( 700, 440 );
 }
 
@@ -105,7 +104,7 @@ void Game::UpdateModel()
 
 		gameManager.HandleCommonInputs( wnd.kbd, wnd, player );
 		// TODO: Mutes all other sounds. Need fixing.
-		gameManager.PlayBackgroundMusic();
+		// gameManager.PlayBackgroundMusic();
 	}
 	else
 	{
