@@ -154,13 +154,19 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Media Include="completeLevel.wav">
+    <Media Include="..\Release\backgroundMusic.mp3">
       <Filter>Media\Sounds</Filter>
     </Media>
-    <Media Include="intoWall.wav">
+    <Media Include="..\Release\completeLevel.mp3">
       <Filter>Media\Sounds</Filter>
     </Media>
-    <Media Include="pointPickup.wav">
+    <Media Include="..\Release\intoWall.mp3">
+      <Filter>Media\Sounds</Filter>
+    </Media>
+    <Media Include="..\Release\playerRespawn.mp3">
+      <Filter>Media\Sounds</Filter>
+    </Media>
+    <Media Include="..\Release\pointPickup.mp3">
       <Filter>Media\Sounds</Filter>
     </Media>
   </ItemGroup>
