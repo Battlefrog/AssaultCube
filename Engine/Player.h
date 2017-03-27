@@ -35,7 +35,7 @@ public:
 	void IsOutsideBoundries();
 	void ResetPlayer();
 
-	int playerSpeed = 60;
+	int playerSpeed = 55;
 	int numberOfTimesReset = 0;
 
 private:
