@@ -52,6 +52,7 @@ private:
 
 	bool isPointCollected = false;
 	bool ActiveTitleScreen = true;
+	bool isMusicPlayed = false;
 
 	Player player;
 
@@ -59,8 +60,6 @@ private:
 
 	Block blocks[ amountOfBlocks ];
 	Point points[ amountOfPoints ];
-
-	Sound crashIntoWall;
 
 	GameManager gameManager;
 

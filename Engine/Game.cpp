@@ -104,7 +104,11 @@ void Game::UpdateModel()
 
 		gameManager.HandleCommonInputs( wnd.kbd, wnd, player );
 		// TODO: Mutes all other sounds. Need fixing.
-		// gameManager.PlayBackgroundMusic();
+		if ( !isMusicPlayed )
+		{
+			gameManager.PlayBackgroundMusic();
+			isMusicPlayed = true;
+		}
 	}
 	else
 	{
@@ -135,6 +139,7 @@ void Game::ComposeFrame()
 	}
 	else
 	{
-		gameManager.DrawTitleScreen( gfx, gfx.ScreenWidth / 2, gfx.ScreenHeight / 2 );
+		// TODO: Replace this call with the Titlescreen
+		gameManager.DrawGameOverScreen( gfx, gfx.ScreenWidth / 2, gfx.ScreenHeight / 2 );
 	}
 }
