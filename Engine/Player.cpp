@@ -29,6 +29,7 @@ void Player::ResetPlayer()
 	// TODO: This will not work for long... better maintain it
 	x = respawnX;
 	y = respawnY;
+	playerRespawn.Play();
 }
 
 Player::Player()

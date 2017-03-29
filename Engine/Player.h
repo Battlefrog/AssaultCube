@@ -10,7 +10,7 @@ Purpose: The dude you move around!
 
 #include "Graphics.h"
 #include "Keyboard.h"
-
+#include "Sound.h"
 class Player
 {
 public:
@@ -52,4 +52,7 @@ private:
 	static constexpr int height = 15;
 
 	Color playerColor = Colors::Green;
+
+	Sound playerRespawn = L"playerRespawn.mp3";
+
 };
