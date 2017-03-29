@@ -19,7 +19,7 @@ void GameManager::HandleCommonInputs( const Keyboard& kbd, MainWindow& wnd, Play
 }
 
 // TODO: Temp image to draw - Replace with .bmp later
-void GameManager::DrawTitleScreen( Graphics & gfx, int x, int y )
+void GameManager::DrawGameOverScreen( Graphics & gfx, int x, int y )
 {
 	gfx.PutPixel( 49 + x, 0 + y, 0, 146, 14 );
 	gfx.PutPixel( 50 + x, 0 + y, 0, 146, 14 );

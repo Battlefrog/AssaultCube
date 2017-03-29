@@ -21,11 +21,11 @@ public:
 	GameManager();
 
 	void HandleCommonInputs( const Keyboard& kbd, MainWindow& wnd, Player& player );
-	void DrawTitleScreen( Graphics& gfx, int x, int y );
+	void DrawGameOverScreen( Graphics& gfx, int x, int y );
 	void PlayBackgroundMusic();
 
 private:
 
-	Sound backgroundMusic;
+	Sound backgroundMusic = L"backgroundMusic.mp3";
 
 };
