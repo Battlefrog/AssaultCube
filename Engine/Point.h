@@ -19,7 +19,7 @@ public:
 
 	const int GetX() const;
 	const int GetY() const;
-	bool IsCollidingWithPlayer( Player player );
+	bool IsCollidingWithPlayer( Player& player );
 
 	void DrawPoint( Graphics& gfx );
 	void InitPoint( int in_x, int in_y );
@@ -36,5 +36,5 @@ private:
 
 	Color pointColor = Colors::Blue;
 
-	Sound getPoint = L"pointPickup.wav";
+	Sound getPoint = L"pointPickup.mp3";
 };

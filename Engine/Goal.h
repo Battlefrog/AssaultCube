@@ -22,7 +22,7 @@ public:
 	const int GetX() const;
 	const int GetY() const;
 
-	bool IsPlayerColliding( Player player );
+	bool IsPlayerColliding( Player& player );
 	bool PlayerCollision( MainWindow& wnd );
 
 	void DrawGoal( Graphics& gfx ) const;
@@ -38,5 +38,5 @@ private:
 
 	Color goalColor = Colors::Yellow;
 
-	Sound levelEnd = L"completeLevel.wav";
+	Sound levelEnd = L"completeLevel.mp3";
 };

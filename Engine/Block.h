@@ -39,5 +39,5 @@ private:
 
 	Color blockColor = Colors::Red;
 
-	Sound blockCollision = L"intoWall.wav";
+	Sound blockCollision = L"intoWall.mp3";
 };

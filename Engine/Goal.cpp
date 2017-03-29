@@ -10,7 +10,7 @@ const int Goal::GetY() const
 	return y;
 }
 
-bool Goal::IsPlayerColliding( Player player )
+bool Goal::IsPlayerColliding( Player& player )
 {
 	const float playerRight = player.GetX() + player.GetWidth();
 	const float playerBottom = player.GetY() + player.GetHeight();

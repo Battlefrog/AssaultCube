@@ -10,7 +10,7 @@ const int Point::GetY() const
 	return y;
 }
 
-bool Point::IsCollidingWithPlayer( Player player )
+bool Point::IsCollidingWithPlayer( Player& player )
 {
 	if ( !isCollected )
 	{
