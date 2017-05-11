@@ -103,7 +103,7 @@ void Game::UpdateModel()
 		}
 
 		gameManager.HandleCommonInputs( wnd.kbd, wnd, player );
-		// TODO: Mutes all other sounds. Need fixing.
+
 		if ( !isMusicPlayed )
 		{
 			gameManager.PlayBackgroundMusic();
@@ -112,7 +112,7 @@ void Game::UpdateModel()
 	}
 	else
 	{
-		if ( wnd.kbd.KeyIsPressed( VK_SPACE ) )
+		if ( wnd.kbd.KeyIsPressed( VK_RETURN ) )
 		{
 			ActiveTitleScreen = false;
 		}
@@ -123,6 +123,7 @@ void Game::ComposeFrame()
 {
 	if ( !ActiveTitleScreen )
 	{
+		pressEnter.StopAll();
 		player.DrawPlayer( gfx );
 
 		for ( int i = 0; i < amountOfBlocks; ++i )
@@ -139,7 +140,13 @@ void Game::ComposeFrame()
 	}
 	else
 	{
+		if ( !isAnnouncerPlayed )
+		{
+			pressEnter.Play();
+			isAnnouncerPlayed = true;
+		}
+
 		// TODO: Replace this call with the Titlescreen
-		gameManager.DrawGameOverScreen( gfx, gfx.ScreenWidth / 2, gfx.ScreenHeight / 2 );
+		gameManager.DrawGameOverScreen( gfx, gfx.ScreenWidth / 2.5f, gfx.ScreenHeight / 2 );
 	}
 }

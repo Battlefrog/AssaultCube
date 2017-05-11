@@ -27,6 +27,7 @@ void Player::IsOutsideBoundries()
 void Player::ResetPlayer()
 {
 	// TODO: This will not work for long... better maintain it
+	playerRespawn.StopAll();
 	x = respawnX;
 	y = respawnY;
 	playerRespawn.Play();

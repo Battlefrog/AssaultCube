@@ -53,6 +53,7 @@ private:
 	bool isPointCollected = false;
 	bool ActiveTitleScreen = true;
 	bool isMusicPlayed = false;
+	bool isAnnouncerPlayed = false;
 
 	Player player;
 
@@ -67,6 +68,8 @@ private:
 
 	MainWindow& wnd;
 	Graphics gfx;
+
+	Sound pressEnter = L"pressEnter.mp3";
 
 	/********************************/
 };
