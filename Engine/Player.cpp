@@ -26,7 +26,7 @@ void Player::IsOutsideBoundries()
 
 void Player::ResetPlayer()
 {
-	// TODO: This will not work for long... better maintain it
+	// TODO: This will not work for long... better keep a look at it
 	playerRespawn.StopAll();
 	x = respawnX;
 	y = respawnY;
@@ -59,13 +59,13 @@ const float Player::GetRespawnY() const
 	return respawnY;
 }
 
-float Player::SetRespawnX( int newRespawnX )
+float Player::SetRespawnX( const int newRespawnX )
 {
 	respawnX = newRespawnX;
 	return respawnX;
 }
 
-float Player::SetRespawnY( int newRespawnY )
+float Player::SetRespawnY( const int newRespawnY )
 {
 	respawnY = newRespawnY;
 	return respawnY;
@@ -79,11 +79,6 @@ int Player::GetWidth() const
 int Player::GetHeight() const
 {
 	return height;
-}
-
-int Player::SetTimesReset( int newValue )
-{
-	return newValue;
 }
 
 void Player::UpdateInput( const Keyboard& kbd, float dt )

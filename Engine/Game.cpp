@@ -82,7 +82,7 @@ void Game::UpdateModel()
 			else
 			{
 				player.ResetPlayer();
-				player.SetTimesReset( player.numberOfTimesReset++ );
+				player.numberOfTimesReset++;
 			}
 		}
 

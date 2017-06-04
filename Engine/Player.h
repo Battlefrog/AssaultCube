@@ -23,12 +23,11 @@ public:
 	const float GetRespawnX() const;
 	const float GetRespawnY() const;
 
-	float SetRespawnX(int newRespawnX);
-	float SetRespawnY(int newRespawnY);
+	float SetRespawnX(const int newRespawnX);
+	float SetRespawnY(const int newRespawnY);
 
 	int GetWidth() const;
 	int GetHeight() const;
-	int SetTimesReset( int newValue );
 
 	void UpdateInput( const Keyboard& kbd, float dt );
 	void DrawPlayer( Graphics& gfx ) const;
