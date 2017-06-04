@@ -9,8 +9,11 @@ bool Block::IsCollidingWithPlayer( Player& player )
 	int blockRight = CalculateWidth( width );
 	int blockBottom = CalculateHeight( height );
 
-	if ( lib.CalculateCollision(blockRight, blockBottom, playerRight, playerBottom,
-								boxX, boxY, player.GetX(), player.GetY()))
+	// TODO: F
+	if (playerRight >= boxX &&
+		player.GetX() <= float(blockRight) &&
+		playerBottom >= boxY &&
+		player.GetY() <= float(blockBottom) == true)
 	{
 		PlaySound();
 		return true;
