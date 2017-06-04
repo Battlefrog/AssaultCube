@@ -1,5 +1,5 @@
 /*
-AssaultCube
+Cubytes
 Class: Player
 Purpose: The dude you move around!
 

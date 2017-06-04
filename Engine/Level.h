@@ -15,7 +15,6 @@ class Level
 
 	private:
 
-
 	// Hardcoded Levels
 	std::vector<Block> Level1Blocks;
 	std::vector<Player> Level1Player;

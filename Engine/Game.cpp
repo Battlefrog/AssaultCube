@@ -142,11 +142,11 @@ void Game::ComposeFrame()
 	{
 		if ( !isAnnouncerPlayed )
 		{
-			pressEnter.Play();
+			// pressEnter.Play();
 			isAnnouncerPlayed = true;
 		}
 
 		// TODO: Replace this call with the Titlescreen
-		gameManager.DrawGameOverScreen( gfx, gfx.ScreenWidth / 2.5f, gfx.ScreenHeight / 2 );
+		// gameManager.DrawGameOverScreen( gfx, gfx.ScreenWidth / 2.5f, gfx.ScreenHeight / 2 );
 	}
 }

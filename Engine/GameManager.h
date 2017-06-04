@@ -1,5 +1,5 @@
 /*
-AssaultCube
+Cubytes
 Class: GameManager
 Purpose: Condences a bunch of nice things that shouldn't be in Game.cpp
 
@@ -16,6 +16,7 @@ Purpose: Condences a bunch of nice things that shouldn't be in Game.cpp
 
 class GameManager
 {
+
 public:
 
 	GameManager();

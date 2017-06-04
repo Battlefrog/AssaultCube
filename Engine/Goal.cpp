@@ -17,17 +17,9 @@ bool Goal::IsPlayerColliding( Player& player )
 	const int goalRight = x + width;
 	const int goalBottom = y + height;
 
-	if ( playerRight >= x &&
-		 player.GetX() <= float( goalRight ) &&
-		 playerBottom >= y &&
-		 player.GetY() <= float( goalBottom ) == true )
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return lib.CalculateCollision(goalRight, goalBottom, playerRight, playerBottom,
+									x, y, player.GetX(), player.GetY());
+
 }
 
 void Goal::DrawGoal( Graphics & gfx ) const

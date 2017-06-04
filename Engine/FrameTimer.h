@@ -1,5 +1,5 @@
 /*
-AssaultCube
+Cubytes
 Class: FrameTimer
 Purpose: DeltaTime and Frame-rate Idependence
 

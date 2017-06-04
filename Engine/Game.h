@@ -51,7 +51,8 @@ private:
 	static constexpr int amountOfPoints = 1;
 
 	bool isPointCollected = false;
-	bool ActiveTitleScreen = true;
+	// TODO: Change this value
+	bool ActiveTitleScreen = false;
 	bool isMusicPlayed = false;
 	bool isAnnouncerPlayed = false;
 

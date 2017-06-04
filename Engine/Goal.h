@@ -1,5 +1,5 @@
 /*
-AssaultCube
+Cubytes
 Class: Goal
 Purpose: Where you move to the next level!
 
@@ -13,6 +13,7 @@ Purpose: Where you move to the next level!
 #include "Sound.h"
 #include "GameManager.h"
 #include "MainWindow.h"
+#include "Library.h"
 
 class Goal
 {
@@ -30,13 +31,15 @@ public:
 
 private:
 
-	int x;
-	int y;
-
 	static constexpr int width = 15;
 	static constexpr int height = 15;
+
+	int x;
+	int y;
 
 	Color goalColor = Colors::Yellow;
 
 	Sound levelEnd = L"completeLevel.mp3";
+
+	CommonLibrary lib;
 };

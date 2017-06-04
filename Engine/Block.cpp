@@ -1,7 +1,7 @@
 #include "Block.h"
 
-//TODO: Function does not report collisions to blocks
-//with negative width and heights
+// TODO: Function does not report collisions to blocks
+// with negative width and heights. Would be nice.
 bool Block::IsCollidingWithPlayer( Player& player )
 {
 	float playerRight = player.GetX() + player.GetWidth();
@@ -9,10 +9,8 @@ bool Block::IsCollidingWithPlayer( Player& player )
 	int blockRight = CalculateWidth( width );
 	int blockBottom = CalculateHeight( height );
 
-	if ( playerRight >= boxX &&
-		 player.GetX() <= float( blockRight ) &&
-		 playerBottom >= boxY &&
-		 player.GetY() <= float( blockBottom ) == true )
+	if ( lib.CalculateCollision(blockRight, blockBottom, playerRight, playerBottom,
+								boxX, boxY, player.GetX(), player.GetY()))
 	{
 		PlaySound();
 		return true;
