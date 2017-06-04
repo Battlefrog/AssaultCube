@@ -12,21 +12,21 @@ const int Point::GetY() const
 
 bool Point::IsCollidingWithPlayer( Player& player )
 {
-	if ( !isCollected )
+	if (!isCollected)
 	{
 		const float playerRight = player.GetX() + player.GetWidth();
 		const float playerBottom = player.GetY() + player.GetHeight();
 		const int pointRight = x + width;
 		const int pointBottom = y + height;
 
-		bool isCollided = lib.CalculateCollision(pointRight, pointBottom, playerRight, playerBottom,
-													x, y, player.GetX(), player.GetY());
-
-		if ( isCollided )
+		if (playerRight >= x &&
+			player.GetX() <= float(pointRight) &&
+			playerBottom >= y &&
+			player.GetY() <= float(pointBottom) == true)
 		{
 			getPoint.Play();
-			player.SetRespawnX( x );
-			player.SetRespawnY( y );
+			player.SetRespawnX(x);
+			player.SetRespawnY(y);
 			isCollected = true;
 			return true;
 		}
