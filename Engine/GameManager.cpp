@@ -7,6 +7,7 @@ GameManager::GameManager()
 
 void GameManager::HandleCommonInputs( const Keyboard& kbd, MainWindow& wnd, Player& player )
 {
+	// Most likely not going to be in the final bulid
 	if ( kbd.KeyIsPressed( 'R' ) )
 	{
 		player.ResetPlayer();

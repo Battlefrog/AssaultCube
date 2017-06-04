@@ -19,8 +19,10 @@ bool Point::IsCollidingWithPlayer( Player& player )
 		const int pointRight = x + width;
 		const int pointBottom = y + height;
 
-		if ( lib.CalculateCollision(pointRight, pointBottom, playerRight, playerBottom, 
-									x, y, player.GetX(), player.GetY()) == true )
+		bool isCollided = lib.CalculateCollision(pointRight, pointBottom, playerRight, playerBottom,
+													x, y, player.GetX(), player.GetY());
+
+		if ( isCollided )
 		{
 			getPoint.Play();
 			player.SetRespawnX( x );

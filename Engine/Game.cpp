@@ -68,10 +68,12 @@ void Game::Go()
 
 void Game::UpdateModel()
 { 
+	// Init the DeltaTime with the most recent FrameTime
 	float dt = ft.Mark();
 
 	if ( ActiveTitleScreen == false )
 	{
+		// Block collision logic
 		for ( int i = 0; i <= amountOfBlocks; ++i )
 		{
 			if ( !blocks[ i ].IsCollidingWithPlayer( player ) )
@@ -86,6 +88,7 @@ void Game::UpdateModel()
 			}
 		}
 
+		// Point Collision logic
 		for ( int i = 0; i <= amountOfPoints; ++i )
 		{
 			if ( points[ i ].IsCollidingWithPlayer( player ) )
@@ -94,6 +97,8 @@ void Game::UpdateModel()
 			}
 		}
 
+		// Only collide if the point is collected, else the
+		// point would only be a respawn station
 		if ( isPointCollected == true )
 		{
 			if ( goal.IsPlayerColliding( player ) )
@@ -104,6 +109,7 @@ void Game::UpdateModel()
 
 		gameManager.HandleCommonInputs( wnd.kbd, wnd, player );
 
+		// Play the background music only once
 		if ( !isMusicPlayed )
 		{
 			gameManager.PlayBackgroundMusic();
