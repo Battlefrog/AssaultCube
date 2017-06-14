@@ -28,7 +28,7 @@ Game::Game( MainWindow& wnd )
 {
 	/* LEVEL 1 */
 
-	/* Goals */
+	/* Goal */
 	goal.InitGoal( 300, 255 );
 
 	// Level Border

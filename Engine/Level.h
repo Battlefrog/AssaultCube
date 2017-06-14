@@ -2,30 +2,46 @@
 #include "Block.h"
 #include "Player.h"
 #include "Point.h"
+#include "Goal.h"
 
 #include <vector>
 
-class Level
+struct Level
 {
 
-	public:
+	bool operator == ( Level &level);
 
-	void LoadLevel( Level blocks, Level player, Level points );
-	void UnloadLevel( Level blocks, Level player, Level points );
+	// Configures the level specifically for the specific level.
+	void InitLevel(const Level &level);
 
-	private:
+	// Unloads the level generically so that a new level can be loaded.
+	// A nice blank, clean state, really.
+	void UnloadLevel(Level &level);
 
-	// Hardcoded Levels
-	std::vector<Block> Level1Blocks;
-	std::vector<Player> Level1Player;
-	std::vector<Point> Level1Points;
+	std::vector<Block> blocks;
+	std::vector<Point> points;
 
-	std::vector<Block> Level2Blocks;
-	std::vector<Player> Level2Player;
-	std::vector<Point> Level2Points;
+	std::vector<int> playerStartPosition;
 
-	std::vector<Block> Level3Blocks;
-	std::vector<Player> Level3Player;
-	std::vector<Point> Level3Points;
+	int amountOfBlocks;
+	int amountOfPoints;
+
+	Goal goal;
 
 };
+
+// Story Mode Levels
+const Level storyLevel1;
+const Level storyLevel2;
+const Level storyLevel3;
+const Level storyLevel4;
+const Level storyLevel5;
+const Level storyLevel6;
+
+// Arcade Mode Levels
+const Level arcadeLevel1;
+const Level arcadeLevel2;
+const Level arcadeLevel3;
+const Level arcadeLevel4;
+const Level arcadeLevel5;
+const Level arcadeLevel6;
