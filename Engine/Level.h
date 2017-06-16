@@ -6,6 +6,7 @@
 
 #include <vector>
 #include <string>
+#include <assert.h>
 
 class Level
 {
@@ -16,11 +17,14 @@ public:
 	bool operator == ( Level &level);
 
 	// Adds the titles and other misc. things to the levels.
-	// THIS IS NEEDED. CALL ME!
+	// THIS IS NEEDED. CALL ME, BUT ONLY ONCE!
 	bool InitLevels();
 
-	// Configures the level specifically for the wanted level.
-	void LoadLevel(Level &level);
+	// Finds and loads the level requested into the CurrentLevel.
+	void FindAndLoadLevel(Level &level);
+
+	// Actually loads the level. Not needed to be called, this is used internally.
+	void LoadLevelIntoCurrentLevel(Level &level);
 
 	// Unloads the level generically so that a new level can be loaded.
 	// A nice blank, clean state, really.
@@ -53,7 +57,7 @@ public:
 // The container for the currently loaded level. Levels are just
 // buckets of infomation, but the currentLevel is where everything
 // gets rendered, collides with, etc.
-const Level currentLevel;
+Level CurrentLevel;
 
 // Story Mode Levels //
 
