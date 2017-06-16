@@ -20,6 +20,8 @@ bool Level::InitLevels()
 	arcadeLevel4.title = "ALevel4";
 	arcadeLevel5.title = "ALevel5";
 	arcadeLevel6.title = "ALevel6";
+
+	return true;
 }
 
 // TODO: Could possibly change this to a switch statement, but it might not be nessessary
