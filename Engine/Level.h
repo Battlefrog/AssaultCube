@@ -54,25 +54,13 @@ public:
 
 };
 
+int numStoryLevels = 6;
+int numArcadeLevels = 6;
+
+std::vector<Level> storyLevels;
+std::vector<Level> arcadeLevels;
+
 // The container for the currently loaded level. Levels are just
 // buckets of infomation, but the currentLevel is where everything
 // gets rendered, collides with, etc.
 Level CurrentLevel;
-
-// Story Mode Levels //
-
-Level storyLevel1;
-Level storyLevel2;
-Level storyLevel3;
-Level storyLevel4;
-Level storyLevel5;
-Level storyLevel6;
-
-// Arcade Mode Levels //
-
-Level arcadeLevel1;
-Level arcadeLevel2;
-Level arcadeLevel3;
-Level arcadeLevel4;
-Level arcadeLevel5;
-Level arcadeLevel6;
