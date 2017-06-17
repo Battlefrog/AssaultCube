@@ -61,13 +61,13 @@ const float Player::GetRespawnY() const
 
 float Player::SetRespawnX( const int newRespawnX )
 {
-	respawnX = newRespawnX;
+	respawnX = (float)newRespawnX;
 	return respawnX;
 }
 
 float Player::SetRespawnY( const int newRespawnY )
 {
-	respawnY = newRespawnY;
+	respawnY = (float)newRespawnY;
 	return respawnY;
 }
 
