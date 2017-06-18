@@ -10,15 +10,17 @@ bool Level::InitLevels()
 	// TODO: If presenting the titles to the Player, pretty them up
 	// a little bit. :)
 
+	// Creating the titles of the levels
 	for (int i = 0; i < numStoryLevels + 1; ++i)
 	{
 		storyLevels[i].title = std::string("SLevel") + std::to_string(i);
 	}
-
 	for (int i = 0; i < numArcadeLevels + 1; ++i)
 	{
 		arcadeLevels[i].title = std::string("ALevel") + std::to_string(i);
 	}
+
+
 	return true;
 }
 
@@ -27,7 +29,6 @@ void Level::FindAndLoadLevel(Level &level)
 {
 	// Compare if the level wanting to be loaded is equal to any other level, and then loads it.
 	// Currently this compiles. No idea it it'll work in practice.
-	
 	bool foundLevel = false;
 
 	if (foundLevel == false)
@@ -36,74 +37,23 @@ void Level::FindAndLoadLevel(Level &level)
 		{
 			if (storyLevels[i] == level)
 			{
-				FindAndLoadLevel(storyLevels[i]);
+				LoadLevelIntoCurrentLevel(storyLevels[i]);
 				foundLevel = true;
+				// Just in case
+				break;
 			}
 		}
 		for (int i = 0; i < numArcadeLevels + 1; ++i)
 		{
 			if (arcadeLevels[i] == level)
 			{
-				FindAndLoadLevel(arcadeLevels[i]);
+				LoadLevelIntoCurrentLevel(arcadeLevels[i]);
 				foundLevel = true;
+				// Just in case
+				break;
 			}
 		}
 	}
-
-	//if (level == storyLevel1)
-	//{
-	//	LoadLevelIntoCurrentLevel(storyLevel1);
-	//}
-	//else if (level == storyLevel2)
-	//{
-	//	LoadLevelIntoCurrentLevel(storyLevel2);
-	//}
-	//else if (level == storyLevel3)
-	//{
-	//	LoadLevelIntoCurrentLevel(storyLevel3);
-	//}
-	//else if (level == storyLevel4)
-	//{
-	//	LoadLevelIntoCurrentLevel(storyLevel4);
-	//}
-	//else if (level == storyLevel5)
-	//{
-	//	LoadLevelIntoCurrentLevel(storyLevel5);
-	//}
-	//else if (level == storyLevel6)
-	//{
-	//	LoadLevelIntoCurrentLevel(storyLevel6);
-	//}
-	//else if (level == arcadeLevel1)
-	//{
-	//	LoadLevelIntoCurrentLevel(arcadeLevel1);
-	//}
-	//else if (level == arcadeLevel2)
-	//{
-	//	LoadLevelIntoCurrentLevel(arcadeLevel2);
-	//}
-	//else if (level == arcadeLevel3)
-	//{
-	//	LoadLevelIntoCurrentLevel(arcadeLevel3);
-	//}
-	//else if (level == arcadeLevel4)
-	//{
-	//	LoadLevelIntoCurrentLevel(arcadeLevel4);
-	//}
-	//else if (level == arcadeLevel5)
-	//{
-	//	LoadLevelIntoCurrentLevel(arcadeLevel5);
-	//}
-	//else if (level == arcadeLevel6)
-	//{
-	//	LoadLevelIntoCurrentLevel(arcadeLevel6);
-	//}
-	//else
-	//{
-	//	// TODO: Confusion will arise. DIS IS GONNA FUCK UP!
-	//	assert("ERROR: Loading a level that does not exist. For safety, the current level is being unloaded.");
-	//	UnloadLevel(CurrentLevel);
-	//}
 }
 
 void Level::LoadLevelIntoCurrentLevel(Level & level)
@@ -112,7 +62,14 @@ void Level::LoadLevelIntoCurrentLevel(Level & level)
 	// I'm putting this here to make it easier on me.
 	UnloadLevel(CurrentLevel);
 
-
+	// Inserting the stored data from .txt files into the CurrentLevel
+	level.blocks = CurrentLevel.blocks;
+	level.points = CurrentLevel.points;
+	level.playerStartPosition = CurrentLevel.playerStartPosition;
+	level.amountOfBlocks = CurrentLevel.amountOfBlocks;
+	level.amountOfPoints = CurrentLevel.amountOfPoints;
+	level.goalX = CurrentLevel.goalX;
+	level.goalY = CurrentLevel.goalY;
 }
 
 void Level::UnloadLevel(Level& level)

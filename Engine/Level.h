@@ -10,6 +10,7 @@
 
 class Level
 {
+
 public:
 
 	// Compares the level titles, not the actual content.
@@ -52,6 +53,10 @@ public:
 	// A singular goal, as you'd like a goal...
 	Goal goal;
 
+	// Simple x and y pos of the goal
+	int goalX;
+	int goalY;
+
 };
 
 int numStoryLevels = 6;
@@ -61,6 +66,6 @@ std::vector<Level> storyLevels;
 std::vector<Level> arcadeLevels;
 
 // The container for the currently loaded level. Levels are just
-// buckets of infomation, but the currentLevel is where everything
+// buckets of infomation, but the CurrentLevel is where everything
 // gets rendered, collides with, etc.
 Level CurrentLevel;
