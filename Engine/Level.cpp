@@ -8,23 +8,27 @@ bool Level::operator==(Level & rhs)
 bool Level::InitLevels()
 {
 	// TODO: If presenting the titles to the Player, pretty them up
-	// a little bit. :)
+	// a little bit, like loading them via the .txt level files
 
-	// Creating the titles of the levels
 	for (int i = 0; i < numStoryLevels + 1; ++i)
 	{
+		// Creating the titles of the levels
 		storyLevels[i].title = std::string("SLevel") + std::to_string(i);
+
+		// Loading infomation via .txt files
+		CollectAndStoreLevelInfo(storyLevels[i]);
 	}
 	for (int i = 0; i < numArcadeLevels + 1; ++i)
 	{
+		// Creating the titles of the levels
 		arcadeLevels[i].title = std::string("ALevel") + std::to_string(i);
+
+		// Loading infomation via .txt files
+		CollectAndStoreLevelInfo(arcadeLevels[i]);
 	}
-
-
 	return true;
 }
 
-// TODO: Could possibly change this to a switch statement, but it might not be nessessary.
 void Level::FindAndLoadLevel(Level &level)
 {
 	// Compare if the level wanting to be loaded is equal to any other level, and then loads it.
@@ -56,6 +60,10 @@ void Level::FindAndLoadLevel(Level &level)
 	}
 }
 
+void Level::CollectAndStoreLevelInfo(Level & level)
+{
+}
+
 void Level::LoadLevelIntoCurrentLevel(Level & level)
 {
 	// IMPORTANT: You do not need to clear the CurrentLevel before calling FindAndLoadLevel.
@@ -65,19 +73,46 @@ void Level::LoadLevelIntoCurrentLevel(Level & level)
 	// Inserting the stored data from .txt files into the CurrentLevel
 	level.blocks = CurrentLevel.blocks;
 	level.points = CurrentLevel.points;
-	level.playerStartPosition = CurrentLevel.playerStartPosition;
+
+	level.playerStartX = CurrentLevel.playerStartX;
+	level.playerStartY = CurrentLevel.playerStartY;
+
 	level.amountOfBlocks = CurrentLevel.amountOfBlocks;
 	level.amountOfPoints = CurrentLevel.amountOfPoints;
+
 	level.goalX = CurrentLevel.goalX;
 	level.goalY = CurrentLevel.goalY;
 }
 
+// TODO: Update this as the levels grow in features / complexity
 void Level::UnloadLevel(Level& level)
 {
 	blocks.clear();
 	points.clear();
-	playerStartPosition.clear();
+
+	playerStartX = 0;
+	playerStartY = 0;
 
 	amountOfBlocks = 0;
 	amountOfPoints = 0;
+}
+
+int Level::GetGoalX()
+{
+	return goalX;
+}
+
+int Level::GetGoalY()
+{
+	return goalY;
+}
+
+int Level::GetPlayerStartX()
+{
+	return playerStartX;
+}
+
+int Level::GetPlayerStartY()
+{
+	return playerStartY;
 }

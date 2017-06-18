@@ -19,28 +19,25 @@ public:
 
 	// Adds the titles and other misc. things to the levels.
 	// THIS IS NEEDED. CALL ME, BUT ONLY ONCE!
+	// Again is a waste of time.
 	bool InitLevels();
 
 	// Finds and loads the level requested into the CurrentLevel.
 	void FindAndLoadLevel(Level &level);
 
-	// Actually loads the level. Not needed to be called, this is used internally.
-	void LoadLevelIntoCurrentLevel(Level &level);
-
 	// Unloads the level generically so that a new level can be loaded.
 	// A nice blank, clean state, really.
 	void UnloadLevel(Level &level);
 
+	int GetGoalX();
+	int GetGoalY();
+
+	int GetPlayerStartX();
+	int GetPlayerStartY();
+
 	// Vectors for holding the blocks and the points
-	// This will be multidimentional. Just have to figure
-	// out how to do that...
 	std::vector<Block> blocks;
 	std::vector<Point> points;
-
-	// Vector for holding the startPos of the Player.
-	// No need to be multidimentional, that would be a
-	// waste of time.
-	std::vector<int> playerStartPosition;
 
 	// Title for the level. Might be shown to the player, 
 	// but the primary purpose is to compare levels.
@@ -53,9 +50,22 @@ public:
 	// A singular goal, as you'd like a goal...
 	Goal goal;
 
+private:
+
+	// Scans a .txt file for level infomation and adds it to
+	// the various factors of the level
+	void CollectAndStoreLevelInfo(Level &level);
+
+	// Actually loads the level. Not needed to be called, this is used internally.
+	void LoadLevelIntoCurrentLevel(Level &level);
+
 	// Simple x and y pos of the goal
 	int goalX;
 	int goalY;
+
+	// Two ints for holding the starting position of the player
+	int playerStartX;
+	int playerStartY;
 
 };
 
